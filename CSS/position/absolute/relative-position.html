@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Relative</title>
+    <style media="screen">
+      body {
+        margin: 0px;
+        background-color: grey;
+      }
+
+      .squr-1 {
+        display: block;
+        position: relative;
+        background-color: blue;
+        height: 300px;
+
+      }
+
+      .squr-1-5 {
+        display: block;
+        position: relative;
+        background-color: green;
+        height: 100px;
+        width: 500px;
+      }
+
+      .squr-2 {
+        display: block;
+        position: relative;
+        left: 5px;/* OFFSET */
+        top: 100px;
+        background-color: purple;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="squr-1">
+      <div class="squr-1-5">
+
+      </div>
+    </div>
+
+    <div class="squr-2">
+
+    </div>
+  </body>
+</html>
+<!--
+- elements are positioned relative to where they occur in flow
+- An element with position: relative; is positioned relative to itself in its normal position.
+- offset doesn't affect the position of surrounding elements, so space is given for the element in the page layout in its static position
+- Setting the top, right, bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position.
+- This value creates a new stacking context when the value of z-index is not auto.
+  Its effect on table-*-group, table-row, table-column, table-cell, and table-caption elements is undefined.  -->

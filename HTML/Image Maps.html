@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!-- AN IMAGE CAN TARGET MULTIPLE HYPERLINK RESOURCES
+       <img usemap="#"> = NAME OF IMAGE MAP  # MUST PRESEED
+       <map name="SPECIFY MAPS NAME HERE"></map>   -->
+
+
+
+       </map>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Image Maps</title>
+  </head>
+  <body>
+    <img src="serch.png" alt="Search" usemap="#search">
+    <map name="search">
+      <area shape="rect" coords="0,0,200,100" href="http://www.bing.com"
+      alt="Bing Panel" title="Link to Bing"> <!-- no Spaces in coords -->
+      <area shape="rect" coords="200,0,400,100" href="www.ask.com" alt="Ask Panel" title="Link to Ask">
+      <area shape="rect" coords="0,100,200,200" href="www.google.com" alt="Google Panel" title="Link to Google"
+      <area shape="rect" coords="200,100,400,400" href="www.yahoo.com" alt="Yahoo Panel" title="Link to Yahoo"
+      </map><!-- validation will fail without alt attribute! -->.
+  </body>
+</html>

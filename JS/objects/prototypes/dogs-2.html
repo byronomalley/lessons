@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dog Portotypes</title>
+    <script type="text/javascript">
+      function Dog(name, breed, weight) {
+        this.name = name;
+        this.breed = breed;
+        this.weight = weight;
+        this.bark = function() {
+          if (this.weight > 25) {
+            alert(this.name + " says Woof!");
+          } else {
+            alert(this.name + " says Yip!");
+          }
+        };
+      }
+
+
+      function Dog(name, breed, weight) {
+        this.name = name;// each dog will have its own name, weight and breed, so these are apropriate in the constructor
+        this.breed =  breed;
+        this.weight = weight;
+      }
+
+      function ShowDog(name, breed, weight, handler) {// this constructor has everything needed to make a dog, plus showdog properties
+        Dog.call(this, name, breed, weight); // cleaning up redundant code, we are relying on the "Dog" constuctor to handle assignement of n,b + w
+        this.handler = handler;// when the body is executed, the first thing is calling the Dog const. using "call"
+      }// this calls "Dog", passing in "this"(new object) and the other parameters as arguments, "Dog" is executed as normal, but the object comes from "ShowDog"
+
+      ShowDog.prototype = new Dog();// the ShowDog.prototype is now an instance of "Dog", thus linking the chain of inheritance
+                                    // the properties in the DOG instance arent assigned values, so they are "undefined"
+      ShowDog.prototype.constructor = ShowDog; // the constructor property must be assigned explicitly, otherwise it is set to "Dog == Best Practice"
+      ShowDog.prototype.league = "Webville";
+
+      ShowDog.prototype.stack = function() {
+        console.log("Stack");
+      };
+
+      ShowDog.prototype.bait = function() {
+        console.log("Bait");
+      };
+
+      ShowDog.prototype.gait = function(kind) {
+        console.log(kind + "ing");
+      };
+
+      ShowDog.prototype.groom = function() {
+        console.log("Groom");
+      };
+
+      var scotty = new ShowDog("Scotty", "Scottish Terrier", 15, "Cookie");
+
+      Dog.prototype.species = "Canine";
+
+      Dog.prototype.bark = function() {
+        if(this.weight > 25) {
+          alert(this.name + " says Woof!");
+        } else {
+          alert(this.name + " says Yip!");
+        }
+      };
+
+      Dog.prototype.run = function() {// this is chaining: Starting with the "Dog" constructor and grabing the prototype property, which is a reference to the property object that has a species property
+        console.log("Run!");
+      };
+
+      Dog.prototype.wag = function() {
+        console.log("Wag!");
+      };
+
+      Dog.prototype.sitting = false;// this property represents a state in which the instance of "dog" is, which is defined by a conditional, initialised to false
+
+      Dog.prototype.sit = function() {
+        if (this.sitting) {
+          console.log(this.name + " is already sitting.");
+        } else {// if the dog is not sitting, "sitting" is set to true, which overrides the prototype property and sets the value in the instance
+          this.sitting = true;
+          console.log(this.name + " is now sitting.");
+        }
+      };
+
+      var fido = new Dog("Fido", "Mixed", 38);
+      var fluffy = new Dog("Fluffy", "Poodle", 30);
+      var spot = new Dog("Spot", "Chihuahua", 10);
+      var scotty = new ShowDog("Scotty", "Scottish Terrier", 15, "Cookie");
+      var beatrice = new ShowDog("Beatrice", "Pomeranian", 5, "Hamilton");
+      fido.bark();
+      fluffy.bark();
+      spot.bark();
+      scotty.bark();
+      beatrice.bark();
+      scotty.gait("Walk");
+      beatrice.groom();
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

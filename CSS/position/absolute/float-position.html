@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Float</title>
+    <style media="screen">
+      body {
+        margin: 0px;
+        background-color: grey;
+      }
+
+      .squr-1 {
+        display: block;
+        background-color: blue;
+        height: 300px;
+
+      }
+
+      .squr-1-5 {
+        display: block;
+        float: left;
+        background-color: green;
+        height: 100px;
+        width: 500px;
+      }
+
+      .squr-2 {
+        display: block;
+        float: right;
+        left: 5px;
+        top: 500px;
+        background-color: purple;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="squr-1">
+      <div class="squr-1-5">
+
+      </div>
+    </div>
+
+    <div class="squr-2">
+
+    </div>
+  </body>
+</html>
+
+<!--
+
+- both inline and block elements can be floated
+- floated elements are taken out of flow, and are floated relative to the above element in HTML flow, HTML tag position is critical
+- works well floating images in paragraphs
+- use "clear" propety to avoid floated elements on the specified side
+- margins dont collapse with floated elements
+- cannot create two equal columns this way
+- inline elements will also ignore a float  -->

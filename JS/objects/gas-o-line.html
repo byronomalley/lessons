@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>gasoline</title>
+    <script type="text/javascript">
+
+      var fiat = {
+        make: "fiat",
+        model: "500",
+        fuel: 0,
+        start: function() {
+          this.started = true;
+        },
+        stop: function() {
+          this.started = false;
+        },
+        drive: function() {
+          if(this.started) {
+            if (this.fuel > 0) {
+            alert(this.make + " " + this.model + "goes zoom zoom!");
+            this .fuel = this.fuel - 1;
+          } else {
+            alert("youre outta fuel buddy");
+            this.stop();
+          }
+          } else {
+            alert("You need to start the engine ya fool")
+          }
+        },
+        addFuel: function(amount) {
+          this.fuel = this.fuel + amount;
+        }
+      }
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

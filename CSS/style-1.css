@@ -1,0 +1,223 @@
+/*
+BOX MODEL = CSS SEES ALL ELEMENTS (BLOCK AND INLINE) AS BOXES, CONTENT AREA
+          = CONTENT AREA IS SURROUNDED BY OPTIONAL PADDING AND MARGINS
+
+CONTENT AREA = CLOSE BORDER AROUND CONTENT
+
+PADDING      = CREATES VISUAL WHITESPACE BETWEEN CONTENT AREA AND BORDER
+               TRANSPARENT
+
+BORDER       = SUROUNDS PADDING AND IS A VISUAL DIFFERENCIATOR
+
+MARGIN       = PROVIDES WHITESPACE OUTSIDE OF BORDERS
+               SEPERATES ELEMENTS
+
+
+
+ITS BETTER TO ORGANIZE MULTIPLE STYLES TOGETHER WHEN YOU
+CAN - LIKE H1,2 AND 3 SO THAT ANY CHANGES MADE CAN BE QUIKER
+AND WITH LESS ERROR
+
+WHEN DEDIDING ON WHICH RULES APPLY A BROWSER TAKES THE FOLLOWING STEPS:
+- GATHER ALL STYLESHEETS RELATED TO THE PAGE
+- GATHER STYLE DECLARATIONS FOR EACH ELEMENT
+- ORDER FOR IMPORTANCE THOSE DECLARATIONS FROM AUTHOR, READER AND BROWSER STYLES
+- COMPARE SPECIFICITY OF DECLARATIONS WITHIN EACH STYLESHEETS
+- SORT OUT CONFLICTING RULES BY PRIORITIZING WHAT IS LOWER ON THE LISTED
+
+SPECIFICITY SCORES ARE AS FOLLOWS
+  - DOES A SELECTOR HAVE AN ID        FIRST NUMBER
+  - DOES A SELECTOR HAVE A CLASS      SECOND NUMBER
+  - DOES A SELECTOR HAVE AN ELEMENT   THIRD NUMBER
+
+  111   >   000
+
+*/
+@font-face {
+  font-family: 'Morris Sans W01 Heavy'; /* name the font - any name you like - this is value definition, not a file reference */
+  src: url('fonts/Morris Sans W01 Heavy.eot'); /* IE9 Compat Modes */
+  src: url('fonts/Morris Sans W01 Heavy.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/Morris Sans W01 Heavy.woff2') format('woff2'), /* Super Modern Browsers */
+       url('fonts/Morris Sans W01 Heavy.woff') format('woff'), /* Pretty Modern Browsers */
+       url('fonts/Morris Sans W01 Heavy.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('fonts/Morris Sans W01 Heavy.svg#svgFontName') format('svg'); /* Legacy iOS */
+
+
+}
+
+/* tell the users browser which font to download
+should be done before all rules
+
+fonts are stored on Web Open Format Files (WOFF = STANDARD) in the server,
+which are referenced to in the HTML file
+
+USE ANY NAME YOU LIKE IN THE FONT-FAMILY
+
+ALWAYS HAVE BACKUP FONTS
+
+"fontsquirrell.com"
+
+*/
+
+@media screen and (min-device-width: 481px) {
+  #lorem-1 {
+    margin-right: 250px;
+  }
+}
+
+@media screen and (max-device-width: 480px) {
+  #lorem-1 {
+    margin-right: 30px;
+  }
+}
+
+@media print {
+  body {
+
+  }
+}
+/* MEDIA QUERIES ARE NOT SUPPORTED BY IE8 AND UNDER - STANDARDS ARE STILL IN DEVELOPMENT */
+
+body {
+  font-family: 'Morris Sans W01 Heavy', sans-serif;
+  font-size: medium;
+  line-height: 1.5em; /* SPACE BETWEEN EACH LINE = 1.5 X FNT SIZE */
+}
+/* ELEMENTS WITHIN AN ELEMENT WILLINHERIT THE STYLE
+RULES OF THE PARENT ELEMENT
+
+NOT ALL THINGS ARE NHERETED:
+   BORDERS - NOT INHERETED*/
+
+h1, h2, h3 {
+  color: rgba(116,116,116,1);
+  font-size: 150%; /* PERCENTAGE RELATIVE TO PARENT CLASS SELECTION (BODY FONT SIZE) */
+}
+
+h1 {
+  color: #fff;
+  font-size: 5em; /* RELATIVE LIKE PERCENTAGE - 5 X 14px */
+  border-bottom: 10px solid rgba(0,0,0,1);
+  text-align: center; /* TEXT ALIGN WILL EFFECT ALL INLINE ELEMENTS IN A BLOCK ELEMENT - NOT JUST TEXT */
+  padding: 50px 50px; /* older versions of IE have trouble with px font sizes */
+  background-color: rgba(145,2,41,1);
+}
+
+#header {
+  background-color:rgba(1,44,55,1);
+  color: rgba(120,126,181,1);
+  width: 80%; /* PERCENTAGE OF WIDTH OF PARENT ELEMENT */
+  position: relative;
+  left: 100px;
+}
+
+P.david {
+  color: blue;
+  font-family: Verdana, Geneva, Arial, sans-serif;
+}
+  /* IF YOU LEAVE OUT THE ELEMENT NAMES (p) THE RULE WILL APPLY TO ALL ELEMENTS
+  WITH THE "david" CLASS
+
+  ELEMENTS CAN BE IN MULTIPLE CLASSES:
+         <p class="david goliath jones">
+
+         ONE SPACE IN BETWEEN - ORDER DOESNT MATTER       */
+
+ /* MULTIPLE FONTS CAN BE APPLIED:
+     - use commas
+      - use uppercase first letters for specific fonts
+      - look up lists of compatible fonts
+
+
+    THE BROWSER WILL CHECK EACH FONT LISTED ABOVE ,LEFT TO RIGHT , TO
+    CHECK AVAILABILITY ON THE USERS COMPUTER
+        - it is sensible to use the same font family for all
+        - be generic in the final entry
+
+  OVER RIDE INHERITANCE BY SPECIFICALLY
+  ADDING A RULE TO AN ELEMENT
+
+  THE MOST SPECIFIC RULE IS ALWAYS USED
+
+  IF SELECTORS ARE EQUALLY SPECIFIC, THE LAST ONE IN THE LIST
+  GETS USED*/
+
+#audio p {
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  background-color: #a7cece;
+  padding: 25px;/* ONE VALUE ADDS THE VALUE TO ALL SIDES OF ELEMENT */
+  padding-left: 120px; /* THE MORE SPECIFIC PROPERTIES SHOULD ALWAYS LOWER ON THE LIST */
+  margin: 25px;/* WHEN BLOCK ELEMENTS ARE STACKED THEY SHARE THE LARGEST VERTICAL MARGIN */
+  margin-right: 250px;
+  border-style: dashed; /* BORDER TOP, BOTTOM, RIGHT, AND LEFT CAN BE STYLED INDIVIDUALLY */
+  border-width: medium; /* BROWSERS DONT ALWAYS AGREE ON WHAT THIS MEANS, CAN BE DEFINED IN PIXELS */
+  border-color: white;
+  border-radius: 40px; /* BORDER TOP/BOTTOM RIGHT + TOP/BOTTOM LEFT CAN BE DEFINED INDIVIDUALLY */
+  line-height: 1.9em;
+  font-style: italic;
+  color: #444;
+  font-family: Georgia, "New Times Roman", sans-serif;
+  background-image: url(logo.png);
+  background-repeat: no-repeat; /* repeat x or y */
+  background-position: top left;/* CAN ALSO BE SET IN PIXELS AND %*/
+}
+
+footer {  /* SELECTS EVERYTHING IN "footer" */
+  color: blue;
+  background-color: grey;
+}
+
+#footer p {
+  font-size: 50%;
+  text-align: center;
+  line-height: normal;
+  margin-top: 30px;
+}
+
+p.footer { /* ONLY SELECTS PARAGRAPHS IN "footer" */
+  color: green;
+}
+
+#images {
+  background-color:
+}
+
+#diver {
+  background-color: rgba(148,7,208,.4);
+  font: small/1.6em Verdana, Helvetica, Arial, sans-serif;
+  /* SHORTFORM - MUST BE IN BORDER
+  font: font-style font-variant font-weight font-size/line-height font-family;
+       |-----------OPTIONAL---------------|         |--OPTIONAL-|
+
+ */
+}
+
+#diver h2 { /* DECENDENT SELECTOR */
+  color: purple;
+  line-height: 1;
+  margin: 0px 10px; /* FIRST VALUE IS FOR TOP AND BOTTOM, SECOND VALUE IS FOR LEFT AND RIGHT  */
+  border: thin solid #007e7e; /* ANY ORDER INSTEAD OF border-width, border-style, border-color */
+}
+
+#diver > h2 { /* (DIRECT) CHILD SELECTOR - MUST BE LISTED BELOW DECENDANT TO HAVE EFFECT*/
+  color: green;
+}
+
+a:link { /* CORRECT ORDERING - LINK VISITED HOVER FOCUS ACTIVE */
+  color: red;
+}
+
+a:visited {/* PSEUDO CLASSES - CLASSES THAT ARENT WRITTEN IN THE HTML */
+  color: purple;/* EXPERIMENT WITH FIRST AND LAST CHILD */
+}
+
+a:hover {
+  color: magenta;
+  background-color: black;
+}
+
+span { /* SPAN IS LIKE DIV FOR INLINE ELEMENTS */
+ color: rgba(34,157,90,1);
+}

@@ -1,0 +1,104 @@
+/* THIS METHOD WORKS WELL WITH FLOATING IMAGES IN PARAGRAPHS - HAVING THEIR INLINE
+FLOW AROUND THE IMAGE
+
+DIV LOCATION/ ORDERING IN HTML IS CRITICAL
+
+CANNOT CREATE TWO EQUAL COLUMNS THIS WAY
+
+
+FROZEN/JELLY STATE IS GOOD FORBLOG POSTS, ALTHOUGH THERE MAY BE ISSUES WITH FILLING
+THE PAGE     */
+
+body {
+  font: 400 medium/1.6em Verdana, Helvetica, Arial, sans-serif;
+  color: #242424;
+  Background-color: #727e76;
+  margin: 0px; /* ENSURE THE BODY COVERS THE WHOLE PAGE */
+  padding: 10px 10px 10px 10px;
+}
+
+#allcontent {
+  width: 1250px;/* THIS CHANGES THE LAYOUT FROM LIQUID TO FROZEN */
+  padding: 5px;
+  background-color: #41022c;
+  margin-left: auto; /* CHANGES THE LAYOUT TO JELLY STATE */
+  margin-right: auto;
+}
+
+h1, h2, h3 {
+  font-size: 200%;
+}
+
+hgroup {
+  color: #080808;
+  background-image: linear-gradient(#3e7d1f, #c9701e);
+}
+
+
+header {
+  background-color: black;
+  color: #d0d0d0;
+  margin: 0px 10px 10px 10px;
+  padding: 15px;
+
+}
+
+.header h3 {
+  font-size: small;
+}
+
+
+#float {
+  float: left;
+  width: 800px;
+}
+
+#leo {
+  background-color: #dbdbdb;
+  margin: 0px 10px 10px 10px;
+  padding: 15px;
+
+}
+
+#home {
+  background-color: #dbdbdb;
+  margin: 0px 10px 10px 10px;
+  padding: 15px;
+
+}
+
+#videos {
+  background-color: #dbdbdb;
+  margin: 0px 10px 10px 10px;
+  padding: 15px;
+  clear: left;/* NO FLOATING ELEMENTS ARE ALLOWED ON THE RIGHT SIDE OF THIS ELEMENT */
+}
+
+#sidebar {
+  background-color: #dbdbdb;
+  margin: 0px 10px 10px 800px;
+  padding: 15px;
+}
+/* THIS PARAGRAPH IS REMOVED FROM FLOW AND FLOATS ABOVE
+    THE REST OF THE INLINE ELEMENTS IN FLOW WILL RESPECT BOUNDARIES OF FLOATING ELEMENTS
+
+  ENSURE THE HTML IS UNDER THE ELEMENT YOU WANT THIS TO FLOAT UNDER
+
+  SET THE MARGINS OF THE SURROUNDING ELEMENTS TO FIT THE FLOATING ELEMENT TO SHOW THE SEPERATION
+     = GUTTER
+  MARGINS DONT COLLAPSE WITH FLOAT ELEMENTS
+
+  INLINE ELEMENTS CAN BE FLOATED AS WELL  */
+
+
+#form {
+  background-color: #dbdbdb;
+  margin: 0px 10px 10px 10px;
+  padding: 15px;
+}
+
+footer {
+  background-color: #dbdbdb;
+  margin: 0px 10px 10px 10px;
+  padding: 15px;
+}

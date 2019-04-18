@@ -1,0 +1,439 @@
+<!-- JAVASCRIPT
+
+STATEMENTS - specifying small computations
+             numerous statements create behaviour of a page
+
+VARIABLES AND VALUES
+    var winners = 2
+    var isEligible = false;   boolean values require no quotation marks
+
+          - you can create variables and assign values to them later
+          - no spaces allowed in variable names
+
+EXPRESSIONS - evaluat values
+
+var total = price - (price * (discount / 100));
+            /           EXPRESSION           /
+
+var scoops = 5        ------------------ set scoops to 5
+while (scoops > 0) {   ----------------- evaluate the while statement to see if its true
+  document.write("Another scoop!") ; --- the first string in the body "another scoop"
+  scoops = scoops - 1;  -----------------
+}
+
+WHILE statement = a keyword, condition, a block of code to be executed if conditions
+                    are met, and a loop is made to do it all again
+     - Most often used when you dont know how many times you need to loop
+
+FOR  - same as WHILE but more convenient
+- variable declaration and initalisation in the first part of the statement
+- packages variable initialisation, a conditional test and variable increments in one statement
+- most often used when you know how many times you need to loop
+
+
+IF and ELSE - allow us to make decisions in code
+
+PROMPT - browsers provide a built in prompt function to get input from a user
+- causes a dialogue box to open with a string of text, like ALERT,
+-  but it also provides a place for the user to give a response
+- this response in the form of a string, is then returned as a result of calling a function
+- no response = "null" = no value
+
+BLOCK OF CODE - set of statements, or one statemet within curly braces
+
+BOOLEAN OPERATORS - used in a boolean expression resulting in a true or false value
+- two kinds - COMPARISON  LOGICAL
+
+  ARIHMETIC OPERATORS
+   +-*/
+
+   = - assigns value to a variable
+
+  COMPARISON OPERATORS - compare two values
+
+   = - assignement operator assigning values to variables
+
+   < - less than
+
+   > - more than
+
+   == - used to see if one value is equal to another, takes types into account == converts the type of one
+- COMPARING A NUMBER TO A STRING
+- the string is always converted to a number
+- not all strings can be converted to numbers = NaN = not equal to anything = false
+-"ninety nine" cannot be converted to a number
+- "true" cannot be converted to a number
+- COMPARING A BOOLEAN TO ANY OTHER TYPE
+- sometimes requires more than one type conversion
+- true converts to one, false converts to 0
+- comparing strings to booleans, both types are converted to numbers
+- COMPARING NULL TO UNDEFINED
+- both these values are represent "no value", none for the variable, non for the object = always equal
+- COMPARING STRINGS TO STRINGS
+- alphabet comes into play = "bannana" is less than "mango" is less than "melon
+- Unicode - standard for representing characters digitally"
+
+
+   === - strict equality, exactly equal to - identity operator
+- values are only equal if the have the same type and the same value
+
+   <= - less than or equal to
+
+   >= - more than or equal to
+
+   != - not equal to
+   !==
+   !===
+
+  LOGICAL OPERATORS - combine two boolean expressions to create one boolean result - true or false
+   || - OR operator, combines test together in IF and results true if either expression is true
+   && - AND operator, results true if both expressions are true
+   ! - NOT operator, acts on one boolean expresson instead of two, results in true if expression is false
+
+   COMBINING OPERATORS
+- adding a number to a string with the + operator will convert the number to a string and concantenate the two
+- 3 + "4" = "34"
+- when combining other arithmetic operators with strings, js prefers to convert the strings to numbers
+- 3 * "4" = 12
+- 1 + 2 + "pizzas" = 3 pizzas
+- (1 + 2) + "pizzas" = 3 pizzas
+- 1 + (2 + "pizzas"); = 12 pizzas
+- concatenating a boolean with a string makes a string  --  true + "love" = "true love
+- unary operator -- -true = -1
+
+    CONVERTING A STRING TO A NUMBER
+     -- var num = 3 + Number("4");
+        var num = 7
+
+
+FLOWCHART - outline of program logic  !! FLOWCHART + PSEUDOCODE = MUST !!
+
+FUNCTION - code that can be reused in any scenario, abstracted and used to automate shit!!!
+- functions have parameters, which recieve corresponding arguements
+- arguements are "pass-by-values" = the function gets a copy of the value to operate with
+
+function bark(name, weight) { //-- keyword name(parameter, parameter)
+    //-- body of function
+}
+
+- the browser will wait until the function is called for before running it - use its name = "invoke
+- parameters act like variables to the statements in the body"
+
+ARRAY - Data structure for ordered data
+- ALWAYS SET INDEX TO 0
+- a javascript type that can hold many values - as many as you want in theory > computer memory - more items = slower program
+- you can have an emppty array - and add things to it later
+- strings, numbers, booleans, objects and other arrays, any javascript value is allowed
+- values dont have to be the same type - but its alot safer to keep them the same
+- used when grouping similar things
+- when an array is created, each item is indexed - starting from 0
+- call the last item of an array with the lenght property - see bubbles
+- every array comes with a length property - properyies are values accociated with arrays
+        - this contains the number of items in an array
+- order of value isnt inherently important - but some purposes will require order
+add a new variable to an array by using the "push" property
+
+  SPARSE ARRAY
+- an array with holes -- values 0 and 1000, array indicies  1 - 999 are valued "undefined"
+- "undefined" is the value assigned to a variable that has not yet been initialised - they still take up memory
+- POTENTIAL HAZARDS
+- to check if for undefined:
+
+      =   if (myArray[i] == undefined) {
+           }
+
+OBJECTS - a collection of properties - as many as you want - objects can have no properties -- you might want to add them dynamically afterwards
+- variable declaration for object
+- each object property has a name and value
+- a propery name can be a string - "on sale": true, - quotes are needed if there is a space in the string
+- no two properyies can have the same name
+
+        PROCEEDURAL PROGRAMING - variable declarations, conditionals, function calls
+        OBJECT-ORIENTED PROGRAMING - using objects
+
+ACCESSING PROPERTY - objectname.property
+CHANGING PROPERTY - objectname.property = value
+ADDING A NEW PROPERTY - objectname.newproperty = value
+COMPUTING PROPERTY - if (objectname.property < value) {}
+DELETING PROPERTY - delete objectname.property
+
+         DISPLAY OBJECT IN CONSOLE - console.log(objectname)
+
+         - variables dont hold objects they reference objects
+
+         PASSING AN OBJECT INTO A FUNCTION
+         - "pass-by-value" rules apply to this too - you are passing in the object reference, not the object
+         - when an object is assigned to a variable it is given a reference to the object - it does not hold the object
+
+FUNCTIONS INSIDE OBJECTS = METHODS - THE NAME IS ALREADY PROVIDED BY THE PROPERTY NAME
+calling the METHOD - fiat.drive();    just like calling any property
+
+- changing properties methodically instead of directly improves maintainability == encapsulation
+- creating a mechanic to checks all properties for allowing certain behaviour can simplify things for you ALOT
+- what looks like a variable in a method is really a property of the parent object
+    = this is important to remember as when called functions look for variable definitions, they look for local and global variables and arguements
+    = THEY DONT LOOK FOR OBJECT PROPERTIES/ METHOD VARIABLES - UNLESS A KEYWORD IS USED
+    =       this.             this.objectPropertyName = objectPropertyValue
+
+objects contain "state" and "behaviour" - these two interact with and inform eachother
+- object properties allow us to keep state about the object
+- object methods allow us to have behaviour
+
+COMPARING OBJECTS
+- two references are only equal if they reference the same object
+- == and === work the same way
+
+- a browser representation of the HTML page
+- Javascript can interact with this: manage content, rarange elements, or remove them
+- after modifications, the browser updates the page dynamically
+- elements can also be added by attatching them to another element in the tree
+- we can get all the child elements of a specified element
+
+- doc - html - head - meta/ title/ script -- and so on
+- body - divs
+
+    !!!   - document.getElementById("greenplanet");     !!!
+          - document is requesing the whole page
+          - getElementById is asking for an element, the id of the element is in the ()
+          - you can do what you want with this element now - assign the element to a variable
+
+      !!!    var planet = document.getElementByld("greenplanet");   !!!
+
+      !!!    planet.innerHTML = "Red Alert: hit by phraser fire";    !!!
+             innerHTML property can be used to change the elements content
+
+          - the document object is used to gain access to the DOM with the code - a built in object with properties and methods including "getElementByld"
+          - getElementById is a method used to grab elements specified with an id
+             - this gives you an "element object" - when you change this, you change what is shown on the page
+              - get text or html
+              - change the content
+              - read an attribute
+              - add an attribute
+              - change an attribute
+              - remove an attribute
+
+          getElementByClassName - method for getting classes
+          getElementByTagNamev- method for getting elements matching tag name soecified
+          getAttribute - method for getting andor setting an elements attribute
+
+          element objects are produced by the browser on loading and parsing through the html doc in flow
+           - these element objects are arranged in the document object model
+           - these objects can have properties methods -- states and behavior
+
+           - innerHTML property represents the content within the element object
+           - this includes nested elements -- you can replace the entire body if you want
+           - outerHTML property refers to the content contained by the element, aswell as the element itself
+
+
+ONLOAD - property of window object
+- event handler functions to package code to be called when a specified event happens
+
+
+
+      myArray.push("arrayItem"); - add new item in the index at the end of the array
+
+TYPES
+
+  PRIMITIVE - numvers, strings, booleans
+  OBJECTS - document, car, math, dog,ect
+
+- strings can be treated as objects ( so can booleans and numbers but less often )
+- length property holds character length of a string
+- charAt method gets the character at a specified index of a string - takes an integer number between 0 and the length of the string(-1) and returns a string containing a single character from the specified podition of the first string
+- indexOf method - takes a string as an argument and returns the index of the first character of the first occurence of that arguement in the string
+- slit method takes a delimeter and uses it to split the string into an array of strings
+- substring method returns a string contained in the first string
+- toLowerCase method returns a string with all uppercase changed to lowercase
+- toUpperCase ------
+- slice method returns a new string that has removed part of the original
+- substring method returns a portion of the sting
+- replace finds substring and replaces them with othe strings
+- concat joins strings together
+- lastIndexOf finds the last occurence of
+- match searches for matches in a string using regular expressions
+- trim removes whitespace from around the sting
+  -
+
+  "undefined" value for variables that havent been initialised, object with a missing property array with a value missing
+- returned from a function when there is no return statement
+- value of a variable when it hasnt been assigned a value
+- the value of an array item that doesnt exist in a sparse array
+- the value of a property that doesnt exist or has been deleted
+- the value that cant be assigned to a property when an object is created
+
+  "null" lack of object , can be used to see if one exists or not
+
+  "NaN" - Not a Number
+- used to represent numbers that cannot be represented
+- the only value in Js that isnt equal to itself, or anything else
+- testing for NaN by equating it with anything wont work
+
+if (isNan (myNum)) {
+myNum = 0;
+ }
+
+- 0/0     var b = "food" * 1000
+
+  falsy values - 0, null, undefined, "" NaN
+  truthy values - everything else
+
+  CHAINING - stringing object references together
+- this allows us to omit temporary variables and shorten our code
+- its a shorthand for a longer series of steps to access properties and methods of objects and arrays
+
+ship.locations.indexOf(guess)  ==  "ship" evaluates the ship object, which has a "locations" property, which has a method of "indexOf"
+
+
+ !!!!!!!!!!  PLAN YOUR CODE    !!!!!!!!!!!!!!!!!!!!
+ !!!!!!!!!!  FIGURE EACH PIECE OUT ONCE AT A TIME    !!!!!!!!!!!!!!!!!!!!
+ !!!!!!!!!!  USE CONSOLE TO FIX BUGS  !!!!!!!!!!!!!!
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>First Script</title>
+    <script type="text/javascript">
+      var passengers = [ { name: "Jane Doloop", paid: true, ticket: "coach" },// each passenger is represented by an object with a name and paid property, an array of objects
+                         { name: "John Creevy", paid: true, ticket: "firstclass" },
+                         { name: "Brian Connolly", paid: false, ticket: "firstclass" },
+                         { name: "Jarlaith Dunne", paid: true, ticket: "coach" } ];
+
+      var products = [ { name: "Grapefruit", calories: 170, color: "red", sold: 8200 },
+                       { name: "Orange", calories: 160, color: "orange", sold: 12101 },
+                       { name: "Cola", calories: 210 , color:  "caramel", sold: 25412},
+                       { name: "Diet Cola", calories: 0 , color: "caramel", sold: 43922 },
+                       { name: "Lemon", calories: 200 , color: "clear", sold: 14983 },
+                       { name: "Raspberry", calories: 180 , color: "pink", sold:  9427},
+                       { name: "Root Beer", calories: 200 , color: "caramel", sold: 9909 },
+                       { name: "Water", calories: 0, color: "clear", sold: 6212 } ];
+
+      function compareSold(colaA, colaB) {
+        if (colaA.sold > colaB.sold) {
+          return 1;
+        } else if (colaA.sold === colaB.sold) {
+          return 0;
+        } else {
+          return -1;
+        }
+      }
+
+      function compareName(colaA, colaB) {
+        if (colaA.name > colaB.name) {
+          return 1;
+        } else if (colaA.name == colaB.name) {
+          return 0;
+        } else {
+          return -1;
+        }
+      }
+
+      function compareCalories(colaA, colaB) {
+        if (colaA.calories > colaB.calories) {
+          return 1;
+        } else if (colaA.calories === colaB.calories) {
+          return 0;
+        } else {
+          return -1;
+        }
+      }
+
+      function compareColor(colaA, colaB) {
+        if (colaA.color > colaB.color) {
+          return 1;
+        } else if (colaA.color == colaB.color) {
+          return 0;
+        } else {
+          return -1;
+        }
+      }
+
+      function printProducts(products) {
+        for (var i = 0; i < products.length; i++) {
+          console.log("Name: " + products[i].name + ", Calories: " + products[i].calories + ", Color: " + products[i].color + ", Sold" + products[i].sold);
+        }
+      }
+
+      products.sort(compareName);
+      console.log("Products sorted by name:");
+      printProducts(products);
+
+      products.sort(compareCalories);
+      console.log("Products sorted by calories:");
+      printProducts(products);
+
+      products.sort(compareColor);
+      console.log("Products sorted by color:");
+      printProducts(products);
+
+      function processPassengers(passengers, testFunction) {// first paramenter is an array, the second is a fumction that tests for a condition in the array
+        for (var i = 0; i < passengers.length; i++) {// iterate through the passengers one at a time
+          if (testFunction(passengers[i])) {// a function is called within a function, in this case, if this inner function returns true, the containing function returns false
+            return false;
+          }
+        }
+        return true;// all passengers have passed the test
+      }
+
+
+      function checkNoFlyList(passenger) {
+       return (passenger.name === "Dr. Evel");
+      }
+
+
+      function checkNotPaid(passenger) {
+       return (!passenger.paid);
+      }
+
+      var allCanFly = processPassengers(passengers, checkNoFlyList);
+      if (!allCanFly) {
+        console.log("The plane can't take off, somebody here is on the no-fly list.");
+      }
+
+      var allPaid = processPassengers(passengers, checkNotPaid);
+      if (!allPaid) {
+        console.log("some cheeky bollocks is jumping on the plane")
+      }
+      // !!! functions returning functions  !!!!!!
+      function createDrinkOrder(passenger) {// this function knows how to process each passenger drink order
+        var orderFunction; // create a variable to hold the function
+
+        if (passenger.ticket === "firstclass") {// conditional code to check the passengers ticket only once
+          orderFunction = function() {
+            alert("Would you like a cocktail or wine, gwwd saaar?");
+          };
+        } else {
+          orderFunction = function() {
+            alert("would you like a coke or water?");
+          };
+        }
+        return orderFunction;
+      }
+
+      function serveCustomer(passenger) {
+        var getDrinkOrderFunction = createDrinkOrder(passenger);// the variable getDrinkOrderFunctin now returns a function
+        getDrinkOrderFunction();// we use this function we get back from createDrinkOrder whenever we need to get a drink order for this passenger
+
+        createDrinkOrder(passenger);// these functions have the same arguement
+      }
+
+      function servePassengers(passengers) {
+        for (var i = 0; i < passengers.length; i++) {// now we iterate over the passengers in the array, and calling serveCustomer for each passenger
+          serveCustomer(passengers[i]);
+        }
+      }
+
+      servePassengers(passengers);
+
+    </script>
+  </head>
+  <body>
+    <h1>Heading</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </body>
+</html>

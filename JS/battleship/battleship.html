@@ -1,0 +1,36 @@
+<!-- PSEUDO code
+set VARIABLES for:
+ - location of ship - 3 cells out of 7 - location1, location2, location3
+ - user "guess"
+ - number of "hits" and set to 0
+ - number of "guesses" and set to 0
+ - whether the ship is sunk or not - "isSunk" and set it to false
+
+loop
+ GET users guess
+ COMPARE input to valid input values
+ IF guess is invalid
+  TELL user to enter another value
+ ELSE
+  ADD to guesses
+  IF guess matches location of battleship
+   ADD one to number of hits
+   IF hits = 3
+    SET isSink to true
+    TELL user "you won"
+   ENDIF
+  ENDIF
+ ENDELSE
+ENDLOOP
+ -->
+ <!DOCTYPE html>
+ <html lang="en" dir="ltr">
+   <head>
+     <meta charset="utf-8">
+     <title>Battleship</title>
+   </head>
+   <body>
+     <h1>Hit the ship boi</h1>
+     <script src="battleship.js" charset="utf-8"></script>
+   </body>
+ </html>

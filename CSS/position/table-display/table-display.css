@@ -1,0 +1,90 @@
+/* BEST OPTION FOR LAYOUTS OF PERFECT COLUMNS THAT REMAIN AWESOME WHEN ZOOMING IN AND OUT */
+
+body {
+  font: 400 medium/1.6em Verdana, Helvetica, Arial, sans-serif;
+  color: #242424;
+  Background-color: #727e76;
+  margin: 0px;
+
+}
+
+#allcontent {
+  padding: 5px;
+  background-color: #045538;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+h1, h2, h3 {
+  font-size: 200%;
+}
+
+hgroup {
+  color: #080808;
+  background-image: linear-gradient(#3e7d1f, #c9701e);
+}
+
+
+header {
+  background-color: black;
+  color: #d0d0d0;
+  padding: 35px;
+}
+
+.header h3 {
+  font-size: small;
+}
+/* A TABLE IS LIKE A SPREADSHEET - MULTIPLE CELLS FOR BLOCK ELEMENNT
+
+THE TABLE REQUIRES A DIV FOR THE ENTIRE TABLE, AND A DIV FOR EACH ROW
+
+A COLUMN REQUIRES A BLOCK ELEMENT WITHIN THE ROW
+
+WHEN ZOOMING IN AND OUT, COLUMNS STAY EQUAL IN HEIGHT, AND THERES NO OVERLAPING WITH
+FOOTERS OR OTHER DIVS
+
+BORDER-SPACING DOESNT COLLAPSE, SO ADJUSTMENTS MIGHT HAVE TO BE MADE TO THE FOOTER AND HEADER MARGINS */
+
+#tablecontainer {
+  display: table;
+  border-spacing: 10px; /* SERVES AS A MARGIN FOR THE CELLS IN THE TABLE */
+}
+
+#tablerow {
+  display: table-row;
+}
+
+#main {
+  display: table-cell; /* MAIN IS A CELL IN THE FIRST COLUMN - AS ITS FIRST IN HTML */
+  background-color: #dbdbdb;
+  /* THE MARGINS FOR SIDEBAR AND MAIN CAN GO,,, */
+  padding: 30px;
+  vertical-align: top;
+  width: 66%; /* ENSURE THIS VALUE ADDS UP TO 100% */
+}
+
+#sidebar {
+  display: table-cell; /* CELL OF THE SECOND COLUMN */
+  background-color: #dbdbdb;
+  padding: 30px;
+  vertical-align: top;
+  width: 33%;
+}
+
+#videos {
+  background-color: #dbdbdb;
+  margin: 0px 10px 10px 10px;
+  padding: 30px;
+}
+
+#form {
+  background-color: #dbdbdb;
+  margin: 0px 10px 10px 10px;
+  padding: 30px;
+}
+
+footer {
+  background-color: #dbdbdb;
+  margin: 0px 10px 10px 10px;
+  padding: 15px;
+}

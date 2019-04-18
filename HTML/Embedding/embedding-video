@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- same rules apply here, as they do in embedding audio
+autoplay
+width
+poster
+id
+
+PRELOAD
+ NONE - NONE OF THE VIDEO IS DOWNLOADED UNTIL THE USER PLAYS IT
+ AUTO - LET THE BROWSER MAKE THE DECISION OF WHAT IS PRELOADED
+ METADATA - MDATA IS DOWNLOADED WITHOUT VID
+
+FORMATS
+
+FILES ARE "CONTAINERS" WITH A VIDEO AND AN AUDIO COMPONENT WITHIN
+
+MP4 container
+   H.264 video
+   AAC audio-->
+
+
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>EMBEDDING VIDEO</title>
+  </head>
+  <body>
+    <video controls preload="">
+      <source src="colin.mp4" type="video/mp4"><!-- TYPE ATTRIBUTE SPECIFIES     MIME TYPE(CONTAINER FORMAT) - optional-->
+      <source src="colin.ogv" type='video/ogg; codecs="theora, vorbis"'><!-- CODEC SPECIFICATION MAKES THIS MORE EFFICIENT - KNOW YOUR FORMATS -->
+      <p>Sorry, your browser is too old, get a new one</p>
+    </video>
+
+    <!-- FLASH VIDEO BACKUP IS RECOMMENDED -->
+
+    <table>
+      <tr>
+        <th></th><th>MP4</th><th>WebM</th><th>Ogg</th>
+      </tr>
+      <tr>
+        <th>VID FILE</th><td>H.264</td><td>VP8</td><td>Theora</td>
+      </tr>
+      <tr>
+        <th>AUDIO FILE</th><td>AAC</td><td>Vorbis</td><td>Vorbis</td>
+      </tr>
+      <tr>
+        <th>BROWSER SUPPORT</th><td>Safari, IE9+</td><td>Firefox, CHrome, Opera</td><td>Firefox, CHrome, Opera</td>
+      </tr>
+    </table>
+
+  </body>
+</html>

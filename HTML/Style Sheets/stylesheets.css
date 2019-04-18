@@ -1,0 +1,16 @@
+
+blockquote {
+ color: red;
+ background: yellow;
+ border: 10px blue;
+ padding: 5px;
+ width: 550px;
+}
+
+p {
+ color: red;
+ background: yellow;
+ border: 10px blue;
+ padding: 5px;
+ width: 550px;
+}

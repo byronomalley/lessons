@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Car Production</title>
+    <script type="text/javascript">
+      window.onload;
+
+      function Car(params) {
+        this.make = params.make;
+        this.model = params.model;
+        this.year = params.year;
+        this.color = params.color;
+        this.passengers = params.passengers;
+        this.convertible = params.convertible;
+        this.mileage = params.mileage;
+        this.started = false;
+        this.start = function() {// for the methods we dont use a parameter directly because we just want properties
+          this.started = true;
+        },
+        this.stop = function() {
+          this.started = false;
+        },
+        this.drive = function() {
+          if (this.started) {
+            console.log(this.make + " " + this.model + " goes zoom!")
+          } else {
+            console.log("Start the engine!")
+          }
+        }
+      };
+
+      var cadiParams = {make: "GM",// take al your arguements and put them in an object literal, and pass this literal into the function
+                        model: "Cadillac",// you dont have to worry about matching the order of your arguements and parameters with this
+                        year: 1955,// use the same names as the ones in the constructor
+                        color: "tan",
+                        passengers: 5,
+                        convertible: false,
+                        milage: 12892};
+
+      var cadi = new Car(cadiParams);
+      if (cadi instanceOf Car) {// instanceOf returns true if the object is returned by a specific constructor
+        console.log("its a car");// the new operator takes note of the constructor that created the new object
+      }
+      var chevy = new Car("Chevy", "Bel Air", 1957, "red", 2, false, 1021);
+      var taxi = new Car("Webville Motors", "Taxi", 1955, "yellow", 4, false, 28112);
+      var fiat = new Car("Fiat", "500", 1957, "Midnight Blue", 2, false, 88000);
+      var dodge = new Car("Dodge", "Charger", 1969, "Black", 2, false, 27500);
+
+      var testCar = new Car("Webville Motors", "Test Car", 2014, "marine blue", 2, true, 21);
+      var cars = [chevy, cadi, taxi, fiat, testCar];
+
+      for (var i = 0; i < cars.length; i++) {
+        cars[i].start();
+        cars[i].drive();
+        cars[i].drive();
+        cars[i].stop();
+      }
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

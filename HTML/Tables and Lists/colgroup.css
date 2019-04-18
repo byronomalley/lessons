@@ -1,0 +1,20 @@
+table#feb colgroup.weekday {
+background: aqua;
+}
+table#feb colgroup.weekend {
+background: yellow;
+}
+table#feb {
+border-collapse: collapse;
+width: 580px;
+}
+table#feb thead, tfoot {
+background: white;
+color: red;
+}
+table#feb tbody {
+text-align: center;
+}
+table#feb tbody tr td#birthday {
+border: 2px solid red;
+}

@@ -1,0 +1,113 @@
+/*
+p:first-letter {
+
+}
+
+p: fist-line {
+
+}
+
+img [width] {}
+img [height] {}
+img [alt="flowers"]
+
+h1+p {}
+
+.blueberry p {}    (parent) (descendant) {}
+div#greentea > p   (parent(s)) > (descendent) {}
+
+
+
+
+ */
+
+body {
+  font: 400 medium/1.6em Verdana, Helvetica, Arial, sans-serif;
+  color: #242424;
+  Background-color: #727e76;
+  margin: 0px; /* ENSURE THE BODY COVERS THE WHOLE PAGE */
+  padding: 10px 10px 10px 10px;
+}
+
+#allcontent {
+  width: 1250px;/* THIS CHANGES THE LAYOUT FROM LIQUID TO FROZEN */
+  padding: 5px;
+  background-color: #41022c;
+  margin-left: auto; /* CHANGES THE LAYOUT TO JELLY STATE */
+  margin-right: auto;
+}
+
+h1, h2, h3 {
+  font-size: 200%;
+}
+
+hgroup {
+  color: #080808;
+  background-image: linear-gradient(#3e7d1f, #c9701e);
+}
+
+
+header {
+  background-color: black;
+  color: #d0d0d0;
+  margin: 0px 10px 10px 10px;
+  padding: 15px;
+
+}
+
+.header h3 {
+  font-size: small;
+}
+
+#main {
+
+}
+
+#float {
+  float: left;
+  width: 800px;
+}
+
+#leo {
+  background-color: #dbdbdb;
+  margin: 0px 10px 10px 10px;
+  padding: 15px;
+
+}
+
+#home {
+  background-color: #dbdbdb;
+  margin: 0px 10px 10px 10px;
+  padding: 15px;
+
+}
+
+#videos {
+  background-color: #dbdbdb;
+  margin: 0px 10px 10px 10px;
+  padding: 15px;
+    clear: left;/* NO FLOATING ELEMENTS ARE ALLOWED ON THE RIGHT SIDE OF THIS ELEMENT */
+}
+
+#sidebar {
+  position: absolute;
+  top: 100px
+  right: 200px;
+  width:480;
+  background-color: #dbdbdb;
+  margin: 0px 10px 10px 800px;
+  padding: 15px;
+}
+
+#form {
+  background-color: #dbdbdb;
+  margin: 0px 10px 10px 10px;
+  padding: 15px;
+}
+
+footer {
+  background-color: #dbdbdb;
+  margin: 0px 10px 10px 10px;
+  padding: 15px;
+}
+.

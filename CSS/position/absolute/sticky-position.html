@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Relative</title>
+    <style media="screen">
+      body {
+        margin: 0px;
+        background-color: grey;
+      }
+
+      .squr-1 {
+        background-color: blue;
+        height: 300px;
+
+      }
+
+      .squr-1-5 {
+        position: sticky;
+        top: 50px;
+        background-color: green;
+        height: 100px;
+        width: 500px;
+      }
+
+      .stick {
+        position: sticky;
+        top: 0;/* a threshold must be specified, or there is no stickiness */
+        background-color: black;
+        height: 20px;
+      }
+
+      .squr-2 {
+        background-color: purple;
+        height: 200px;
+      }
+      .squr-3 {
+        background-color: red;
+        height: 1000px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="squr-1">
+      <div class="squr-1-5">
+
+      </div>
+    </div>
+
+    <div class="stick">
+
+    </div>
+
+    <div class="squr-2">
+
+    </div>
+    <div class="squr-3">
+
+    </div>
+  </body>
+</html>
+<!--
+- element is positioned according to its place in the normal flow of the document
+- elements are offset relative to their parent containing blocks
+- stickiness is restricted by the boundaries of the parent element container
+- the offset doesn't affect the position of any other elements
+- this value always creates a new stacking context
+- a sticky element "sticks" to its nearest ancestor that has a "scrolling mechanism"
+(created when overflow is hidden, scroll, auto, or overlay), even if that ancestor isn't the nearest actually scrolling ancestor.
+This effectively inhibits any "sticky" behavior
+- can be thought of as a hybrid of relative and fixed positioning, it is treated as relatively positioned until a certain scrolling
+point is reached, and it then acts as a boundary to its parent container block
+-  -->

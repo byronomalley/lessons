@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- FRAGMENT IDENTIFIERS:
+        - USE ID ATTRIBUTES
+        - FRAG ID is specified to the HREF in the opening <a> tag
+          prefixed by #    <a href="#top">
+        - HYPERLINK can go to a SPECIFIED POINT on a DIFFERENT SOURCE
+              <a href="index.html#top"></a>
+
+         '#' - used in HTML to TARGET FRAGMENTS and to specify HEX. COLORS
+             - used in CSS to SELECT elements by their ID ATTRIBUTE
+
+          always provide a link to top of a lenghty page
+                                       -->
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Fragment ID</title>
+    <link rel="stylesheet" href="fragment.css">
+  </head>
+  <body>
+    <a id="top" href="#btm">Skip to page foot</a>
+    <a id="next-btm"  href="next.html#btm">Skip to next page foot</a>
+    <p class="yellow-block"></p>
+    <a id="btm" href="#top">Skip to page head</a>
+  </body>
+</html>

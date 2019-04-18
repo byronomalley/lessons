@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>CONVERTING TYPES</title>
+    <style media="screen">
+      table td {
+        border: solid; red; 0.5px;
+        padding: 5px;
+        font-family: sans-serif;
+        font-weight: bold;
+      }
+
+      .falsey {
+        background-color: #97d0d1;
+      }
+
+      .booleans {
+        background-color: #b37c77;
+      }
+
+      .strings {
+        background-color: #c293d5;
+      }
+
+      .numbers {
+        background-color: #a9c370;
+      }
+
+      .objects {
+        background-color: #c2ba57;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>VALUE</th><th>CONVERTING TO</th>
+        </tr>
+        <tr>
+          <th></th><th>STRING</th><th>NUMBER</th><th>BOOLEAN</th><th>OBJECT</th>
+        </tr>
+      </thead>
+      <tr class="falsey">
+        <td>undefined</td><td>"undefinded"</td><td>NaN</td><td>false</td><td>TypeError</td>
+      </tr>
+      <tr class="falsey">
+        <td>null</td><td>"null"</td><td>0</td><td>false</td><td>TypeError</td>
+      </tr>
+      <tr class="booleans">
+        <td>true</td><td>"true"</td><td>1</td><td></td><td>new Boolean(true)</td>
+      </tr>
+      <tr class="booleans">
+        <td>false</td><td>"false"</td><td>0</td><td></td><td>new Boolean(false)</td>
+      </tr>
+      <tr class="strings">
+        <td>""(empty string)</td><td></td><td>0</td><td>false</td><td>new Sting("")</td>
+      </tr>
+      <tr class="strings">
+        <td>"1.2"(numeric)</td><td></td><td>1.2</td><td>true</td><td>now String("1.2")</td>
+      </tr>
+      <tr class="strings">
+        <td>"one"(non-numeric)</td><td></td><td>NaN</td><td>true</td><td>new String("one")</td>
+      </tr>
+      <tr class="numbers">
+        <td>0</td><td>"0"</td><td></td><td>false</td><td>new Number(0)</td>
+      </tr>
+      <tr class="numbers">
+        <td>-0</td><td>"0"</td><td></td><td>false</td><td>new Number(-0)</td>
+      </tr>
+      <tr class="numbers">
+        <td>NaN</td><td>"NaN"</td><td></td><td>false</td><td>new Number(NaN)</td>
+      </tr>
+      <tr class="numbers">
+        <td>Infinity</td><td>"Infinity"</td><td></td><td>true</td><td>new Number(Infinity)</td>
+      </tr>
+      <tr class="numbers">
+        <td>-Infinity</td><td>"-Infinity"</td><td></td><td>true</td><td>new Number(-Infinity)</td>
+      </tr>
+      <tr class="numbers">
+        <td>1(finite, not 0)</td><td>"1"</td><td></td><td>true</td><td>new Number(1)</td>
+      </tr>
+      <tr class="objects">
+        <td>{any object}</td><td>see ~38.63</td><td>see ~38.63</td><td>true</td><td></td>
+      </tr>
+      <tr class="objects">
+        <td>[empty array]</td><td>""</td><td>0</td><td>true</td><td></td>
+      </tr>
+      <tr class="objects">
+        <td>[9] (1 numeric element)</td><td>"9"</td><td>9</td><td>true</td><td></td>
+      </tr>
+      <tr class="objects">
+        <td>['a'] ( any other array)</td><td>use join() method</td><td>NaN</td><td>true</td><td></td>
+      </tr>
+      <tr class="objects">
+        <td>function() (any function)</td><td>see ~38.63</td><td>NaN</td><td>true</td><td></td>
+      </tr>
+    </table>
+
+  </body>
+</html>

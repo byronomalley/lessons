@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!-- <input type="Checkbox" name="must" value="must" checked(optional boolean
+attribute)>
+
+<fieldset> only groups related elements for visual presentation
+
+CHECKBOX NAMES can be unique or share a common NAMES
+   common names allow for selection of multiple values with the same property
+
+<form    action="http://www.url-of-web-server / folder the script is in / name of server script that processes fprm"
+         method="how the form data is sent to the server"></form>
+
+         <input type="text" name="fullname" maxlength="">
+
+         <input type="submit">
+
+         <input type="radio" name="hotornot" value="hot"> associated inputs must have the same name
+         <input type="radio" name="hotornot" value="not"> but different values
+
+         <input type="checkbox" name="spice" value="nutmeg" checked>
+         <input type="checkbox" name="spice" value="fakeweed">
+         <input type="checkbox" name="spice" value="garlic">
+         <input type="checkbox" name="extras[]" value="garlic"> [] these bracets are a hint for php that multiple values can be expected
+
+         <textarea name="comments(unique name for server)"
+         rows="how many characters tall" cols="how many characters wide"> any text between tags is the initial text (not place-holder)
+         </textarea> not an empty element (requires a closing tag)
+
+         <select name="characters">   all names must be unique so the server can differentiate
+           <option value="Arthur">Arthur Morgan</option> server takes the name from "select" and value from "option"
+           <option value="Dutch">Dutch Van der Linde</option>
+           <option value="John">John Marston</option>
+           <option value="Jack">Jack Marston</option>
+         </select>
+
+         <input type="number" min="0" max="20"> some browsers will show arrows for up and down
+
+         <input type="range" min="0" max="20" step="5(optional attribute for number and range inputs)">
+
+         <input type="color"> provides color picker - text input appears if there is no browser support
+
+         <input type="date"> provides calander - text input appears if there is no browser support
+
+         <input type="email">
+
+         <input type="url"> specifying text inputs makes it easier for mobile custom keyboards
+
+         <input type="tel"> telephone
+
+GET VS POST = both of these methods move data from browser to server
+
+GET  =  form variables are appended to the URL and a response page is requested from the server
+        all data is part of the request and is not seen on the URL
+     = if a user wants to bookmark the results of the form (list of search results), use GET
+
+POST =  packages form variables, appends them to the URL and sends them to the server
+        every form name-value pair is appended
+     =  always use POST when private info is requested in the form
+     =  always use POST for textarea
+
+
+
+
+ -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Checkbox Example</title>
+    <link rel="stylesheet" href="/css/master.css">
+  </head>
+  <body>
+    <form action="http://localhost/echo.pl" method="get">
+      <p>Yes, I would like to recieve details
+      <input type="checkbox" name="Ask For" value="Details" checked></p>
+
+      <input type="color">
+
+      <fieldset>
+        <legend>CHECKING BOXES</legend>
+        Sailing <input type="checkbox" name="Do" value="Sail">
+        Walking <input type="checkbox" name="Do" value="Walk">
+        Driving <input type="checkbox" name="Do" value="Drive">
+        Skiing <input type="checkbox" name="Do" value="Ski">
+        Jogging <input type="checkbox" name="Do" value="Jog">
+      </fieldset>
+      <p><input type="submit"value="Submit Form"></p>
+    </form><!-- CHECKING BOXES -->
+    <hr>
+
+    <form action="index.html" method="get">
+      <fieldset>
+        <legend>IMAGE FOR BUTTON</legend>
+          <input id="pepperoni" type="checkbox" name="Toppings" value="Pepperoni">Pepperoni
+          <input id="mushroom" type="checkbox" name="Toppings" value="Mushroom">Mushroom
+          <input id="bbqsauce" type="checkbox" name="Toppings" value="BBQ Sauce">BBQ Sauce
+
+      </fieldset>
+
+     <input type="reset" value="Reset Form">
+     <input type="button" value="Choose For Me" id="btn">
+     <input type="submit" value="Submit Form">
+   </form><!-- BUTTONS -->
+   <hr>
+
+   <form id="form-1" action="index.html" method="get">
+     Please Supply your address:
+     <input id="adr" type="text" name="Address" size="45"> <br>
+     <input type="image" name="ibutton.png" alt="Submit Button"
+     title="Click to submit form">
+     <img id="btn" src="ibutton.png" alt="Submit Button" title="Click to
+     Submit JavaScript validation">
+     <!-- <input type="image" alt="must" name="mus" value="must">
+          <img> can be used by attaching a behaviour as a script
+     -->
+   </form><!-- IMAGE FOR BUTTON -->
+   <hr>
+
+   <form action="index.html" method="get">
+     <fieldset>
+       <legend>LABEL SUBMIT</legend>
+       <label class="hilite">Hammer
+       <input type="checkbox" name="Toolbox" value="Hammer" tabindex="2" checked></label>
+       <label class="hilite">Wrench
+       <input type="checkbox" name="Toolbox" value="Wrench" tabindex="3"></label>
+       <label class="hilite">Drill
+         <input type="checkbox" name="Toolbox" value="Drill" tabindex="4"></label>
+       <label class="hilite">Skrewdriver
+         <input type="checkbox" name="Toolbox" value="Skrewdriver" tabindex="5"></label>
+       <label class="hilite">Dildo
+         <input type="checkbox" name="Toolbox" value="Dildo" tabindex="6"></label>
+       <button type="submit" tabindex="1">
+         <img src="toolbox.png">Submit
+       </button>
+       <!--FOR ASSOCIATING TEXT WITHFORM CONTROL
+
+        <label for="SPECIFY VALUE FOR CONTROLS ID ATT FOR ASSOCIATION"></label>
+
+       OR
+
+       <label for=""> TEXT  AND CONTROL ELEMENT</label>
+        = ALLOWS STYLING TO BE APPLIED TO ENTIRE label
+
+        FORM CONTROL ELEMENT = <input> <button> <textarea> ELEMENTS
+                             = tabindex attribute can be applied THESE, aswell as
+                               <a> <area> <object> <select> ELEMENTS
+                             = TABINDEX specifies tabbing order
+                             = using a tab key the user can navigate the document
+                               starting from the lowest TABINEX VALUE
+           -->
+     </fieldset><!-- LABEL SUBMIT -->
+     <hr>
+
+     <form action="index.html" method="get">
+       <fieldset>
+         <legend>LOGO SUBMIT BUTTON</legend>
+         <input type="text" name="Color">
+         <button type="button" onclick="alert('Dumb cunts get no help, Now Fuck off')">
+           <img src="logo-help.png" alt="Help">Help
+           <button type="submit">
+             <img src="logo-submit.png" alt="Submit">Submit
+           </button>
+           <button type="reset">
+             <img src="logo-reset.png" alt="Reset">Reset
+           </button>
+         </button>
+         <!-- <button type="button(scripting)/submit(type)/reset(type)" name="button">
+             [with a SCRIPTING BUTTON, "onclick" attribute in button element ,,,,,]
+              <img src="Logo URL" alt=""> = Logos for buttons
+
+              specify default value in a textbox or textline with VALUE ATTRIBUTE
+         </button> -->
+       </fieldset> <!-- LOGO SUBMIT BUTTON-->
+       <hr>
+
+       <form action="http://localhost/echo.pl" method="get">
+         <p>Choose only one answer</p>
+         <fieldset>
+           <legend>What kind of language is HTML?</legend>
+           Scripting <input type="radio" name="Definition" value="Scripting">
+           Markup <input type="radio" name="Definition" value="Markup">
+           Programming <input type="radio" name="Definition" value="Programming" checked>
+         </fieldset>
+         <hr>
+
+         <p><input type="submit" value="Submit Form"> </p>
+         <!-- <input type="Radio" name="must" value="must" checked(optional)> -->
+       </form><!-- RADIO BUTTONS -->
+       <hr>
+
+       <form action="http://localhost/echo.pl" method="get">
+         <select name="HTML List Type Selector One" size="4">
+           <optgroup label="List Type 1">
+             <option value="UL">Unordered List</option>
+             <option value="OL" selected>Ordered List</option>
+             <option value="DL">Definition List</option>
+           </optgroup>
+         </select>
+         <select name="HTML List Type Selector Two">
+           <optgroup label="List Type 2">
+             <option value="UL">Unordered List</option>
+             <option value="OL">Ordered List</option>
+             <option value="DL" selected>Definition List</option>
+           </optgroup>
+         </select>
+         <p> <input type="submit" value="Submit Form"></p>
+         <!--  <select class="" name="list name(must)">
+               <option value="must" selected(optional)>
+               </option></select>
+
+             <optgroup label="option group name">
+               <option value=""></option>
+             </optgroup>
+
+             "SELESCTED" ATTRIBUTE = ALWAYS PROVIDE A DEFAULT CHOICE
+          -->
+       </form><!-- SELECTING OPTIONS -->
+       <hr>
+
+       <form action="http://localhost/echo.pl" method="get">
+         <p>
+           <input type="submit" name="My Submit Button Name" value="My Submit Button Value">
+         </p>
+         <!-- <form class="" action="index.html"(specify url of web server
+         script to process submitted data) method="post/get"(specifies which http
+         method is used for submitting form)>
+
+         for  SUBMIT BUTTON - <input type="submit" name="" value=""></form>
+
+         FORMS CANNOT BE NESTED INSIDE EACHOTHER
+          -->
+       </form><!-- SUBMITTING FORMS -->
+       <hr>
+
+       <form action="index.html" method="post" enctype="multipart/form-data">
+         <input type="file" name="Upload"><br>
+
+        <input type="submit" value="Submit Form">
+        <!-- FOR FILE SELECTION FACILITIES
+
+        <input type="file" name="NAME(MUST)" value="">
+
+        produced text field and BROWSE BUTTON
+
+        <form> must have ENCTYPE ATTRIBUTE = specifies encoding as "MULTIPART/FORM-DATA"
+                      and METHOD ATTRIBUTE = must specify POST METHOD-->
+      </form><!-- UPLOAD -->
+
+  </body>
+</html>

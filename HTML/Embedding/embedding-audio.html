@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!-- AUDIO CAN BE EMBEDDED WITH <audio>
+
+<audio src="URL" autp>
+  OTHER ATTRIBUTES:
+  AUTOPLAY = a boolean attribute, browser will immediately play file
+  LOOP = boolean attribute, browser will play file repeatedly
+  CONTROLS = boolean attribute, browser will display start and stop controls
+  PRELOAD = 2 values; auto + none; will the browser preload or not
+  </audio>
+
+BOOLEAN ATTRIBUTES NEED NO values
+
+BROWSERS RELY ON IN-BUILT CODER DECODER TO DECODE AUDIO FILES
+ Advanced Audio Coding + Ogg audio ect
+ = THIS MEANS AUDIO RESOURCES NEED TO BE ENCODED TWICE
+
+ -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>EMBDDING AUDIO</title>
+  </head>
+  <body>
+<audio controls>Alice In Chains
+<source src="aic.mp3" type="audio/mpeg">
+<source src="aic.ogg" type="audio/ogg">
+</audio>
+  </body>
+</html>

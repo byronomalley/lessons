@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Flex</title>
+    <style media="screen">
+      body {
+        margin: 0;
+        background-color: #86a2b3;
+      }
+
+      #container {
+        display: flex;
+        background-color: #fb4866;
+        padding: 20px;
+      }
+
+      #container > div {
+        background-color: red;
+        flex: 1; /* responsive width */
+        /* shorthand for flex-grow, flex-shrink, flex-basis */
+      }
+
+      #div-1 {
+        width: 200px;
+        height: 100px;
+      }
+
+      #div-2 {
+        width: 150px;
+        margin: 5px;
+      }
+
+      #div-3 {
+        height: 50px;
+        width: 79px;
+      }
+
+      #div-4 {
+        width: 300px;
+        height: 150px;
+        margin: 15px;
+      }
+
+      #div-5 {
+        margin-left: auto;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="flex-item" id="div-1">DIV-1</div>
+      <div class="flex-item" id="div-2">DIV-2</div>
+      <div class="flex-item" id="div-3">DIV-3</div>
+      <div class="flex-item" id="div-4">DIV-4</div>
+      <div class="flex-item" id="div-5">DIV-5</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Phrase Maker</title>
+    <script type="text/javascript">
+      function makePhrases() { // define function
+        var words1 = ["247", "multi-tier", "30,000 foot", "B2B", "win-win"];//   five strings for each array
+        var words2 = ["empowered", "value-added", "orientated", "focused", "aligned"];
+        var words3 = ["process", "solution", "tipping point", "strategy", "vision"];
+
+        var rand1 = Math.floor(Math.random() * words1.length);// generating random number between 0 and 1 and multiplting it by the length value of the array
+        var rand2 = Math.floor(Math.random() * words2.length);
+        var rand3 = Math.floor(Math.random() * words3.length);
+
+        var phrase = words1[rand1] + " " + words2[rand2] + " " + words3[rand3];// define "phrase" and call the word variables
+        alert(phrase);// make the result visible 
+      }
+      makePhrases(); // calling the function
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Absolute</title>
+    <style media="screen">
+      body {
+        margin: 0px;
+        background-color: grey;
+      }
+
+      .squr-1 {
+        background-color: blue;
+        height: 300px;
+        width: 500px;
+      }
+
+      .squr-1-5 {
+        background-color: green;
+        height: 100px;
+        width: 500px;
+      }
+
+      .squr-2 {
+        background-color: purple;
+        height: 200px;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="squr-1">
+      <div class="squr-1-5">
+      </div>
+    </div>
+
+    <div class="squr-2">
+
+    </div>
+  </body>
+</html>
+<!--
+- similar to absolute
+- removed from flow, no space is left where the element used to be
+- positioned relative to the initial containing block established by the viewport, unless one of the parent elements have a TRANSFORM, PERSPECTIVE or
+FILTER property set to anything other than none ( in these cases the parent acts as the containing block, but there are inconcistencies between browsers)
+always creates a new stacking context -->

@@ -1,0 +1,120 @@
+caption {
+  font-style: italic;
+  padding-top: 10px;
+}
+
+table#data {
+  width: 580px;
+  font-family: sans-serif;
+  border: 5px solid black;
+  margin: 0px 20px 0px 20px;
+  caption-side: bottom;
+  border-spacing: 10px 20px;
+}
+/* INSTEAD OF MARGINS TABLE CELLS HAVE "BORDER-SPACES"
+BORDER COLLAPSE IS ALSO AVAILABLE
+
+pseudo classes are based on an elements state
+
+NTH CHILD PSEUDO CLASS - the state is the numerical order of an element in relation to its sibling elements
+                    - first child, second child*/
+
+table#data td,th {
+  border: thin dotted black;
+  padding: 5px;
+}
+
+p:nth-child(even) {
+  background-color: #0b835d;
+  padding: 50px;
+}
+
+p:nth-child(odd) {
+  background-color: #c7741d;
+  padding: 50px;
+}
+
+p:nth-child(2n) { /* selects even numbered paragraphs */
+  background-color: #0b835d;
+  padding: 50px;
+}
+
+p:nth-child(2n+1) { /* selects odd numbered paragraphs */
+  background-color: #c7741d;
+  padding: 50px;
+}
+
+table table th {
+  background-color: white;
+}
+
+td {
+  text-align: center;
+}
+
+td.alignleft {
+  text-align: right;
+}
+
+th {
+  background-color: #51b470;
+}
+
+tr {
+background-color: #cfbc6a;
+}
+
+tr:nth-child(2n+1) {
+  background-color: #19f72f;
+}
+
+table#data td[rowspan="2"] {
+  background: yellow ;
+}
+table#data td[rowspan="3"] {
+  background: aqua ;
+}
+table#data td[colspan="2"] {
+  background: aqua ;
+}
+table#data td[colspan="3"] {
+  background: yellow ;
+}
+table#data thead {
+  background: aqua ;
+}
+table#data th.next {
+  background: yellow ;
+}
+table#data tfoot {
+  background: lime ;
+}
+table#data tr.default td {
+  height: 30px;
+  background: yellow;
+}
+table#data tr.center td {
+  text-align: center;
+  height: 30px;
+  background: aqua;
+}
+table#data tr.right td {
+  text-align: right;
+  height: 30px;
+  background: lime;
+}
+table#data tr.bottom td {
+  vertical-align: bottom;
+}
+
+/* CELL SPACING CAN BE REMOVED  */
+table#data.no-border {
+  border-collapse: collapse;
+  border: none;
+}
+table#data tr th.cut-border {   /* removes outer border */
+border:0;
+}
+
+/* border-top-left-buottom-right properties allow the styling of individual
+  borders */

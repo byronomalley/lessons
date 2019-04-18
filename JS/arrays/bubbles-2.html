@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bubbles Report - List of results - Highscores</title>
+    <script type="text/javascript">
+
+      var scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 48, 69, 34, 55, 51, 52,
+                    44, 51, 69, 64, 66, 55, 52, 61, 46, 31, 57, 52, 44, 18, 41, 53,
+                    55, 61, 51, 44];
+      var highScore = 0;
+      var output;
+
+      // FIRST LOOP - find the highscores
+      for (var i = 0; i < scores.length; i++) { // POST-INCREMENT OPERATOR - "++ = addition increment  -- = subtraction increment
+           // "i" is a variable to keep track of the index
+        output = "bubble solution #" + i + " score: " + scores[i];
+        console.log(output);
+        if (scores[i] > highScore) {
+          highScore = scores[i];
+        }
+      }// END first loop
+
+      console.log("Bubbles tests: " + scores.length);
+      console.log("Highest Bubble score: " + highScore);
+
+      // SECOND LOOP - find the indecies with the highscores
+      var bestSolutions = [];
+      for (var i = 0; i < scores.length; i++) {
+        if (scores[i] == highScore) {
+          bestSolutions.push(i);
+        }
+      }// END second loop
+
+      console.log("solutions with the highest score: " + bestSolutions);
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>.

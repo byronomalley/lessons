@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Robots</title>
+    <script type="text/javascript">
+
+      function Robot(name, year, owner) {
+        this.name = name;
+        this.year = year;
+        this.owner = owner;
+      }
+
+      Robob.prototype.toString = function() {
+        retutn this.name + " Robot belonging to " + this.owner;// this string is tailored specifically to this object, it wouldnt do a good job otherwise
+      };// toString doesnt have to be invoked directly: concatenating  a string and an object, JS will use toString method to convert the obj to a string before doing the next thing
+
+      var toy = new Robot("Toy", 2013, "Array");
+
+      console.log(toy.toString());// this s
+
+      function SpaceRobot(name, year, owner, homePlanet) {
+        this.name = name;
+        this.year = year;
+        this.owner = owner;
+        this.homePlanet = homePlanet;
+      }
+
+      Robot.prototype.maker = "ObjectsRUs"
+      Robot.prototype.speak = speak()
+      Robot.prototype.makeCoffee = makeCoffee()
+      Robot.prototype.blinkLights = blinkLights()
+
+      SpaceRobot.prototype = new Robot();
+
+      SpaceRobot.prototype.speak = function() {
+        alert(this.name + " says Sir, if I may venture an opinion...");
+      };
+      SpaceRobert.protype.pilot = function() {
+        alert(this.name + " says Thrusters? Are they important?");
+      };
+
+      var c3po = new SpaceRobot("C3P0", 1977, "Luke Skywalker", "Tatooine");
+      c3po.speak();
+      c3po.pilot();
+      console.log(cp30.name + " was made by " + c3po.maker);
+
+      var simon = new SpaceRobot("Simon", 2009, "Carla Diana", "Earth");
+      simon.makeCoffee();
+      simon.blinkLight();
+      simon.speak();
+
+      var robby = new Robot("Robby", "1956", "Dr. Morbius")
+      var rosie = new Robot("Rosie", "1962", "George Jetson")
+
+      robby.onOffSwitch = function(x) {
+        var isOn = false;
+
+      };
+      robby.makeCoffee =
+
+      rosie.cleanHouse = function() {
+        console.log("House is cleaned")
+      };
+
+      console.log(robby.name + " was made by " + robby.maker + " in " + robby.year + " and is owned by " + robby.owner);
+      robby.makeCoffee();
+      robby.blinkLights();
+
+      console.log(rosie.name + " was made by " + rosie.maker + " in " + rosie.year + " and is owned by " + rosie.owner);
+      rosie.cleanHouse
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

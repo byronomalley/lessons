@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- <input type="TEXT" name="NAME" value="">
+     password is created by assigning password as type attrinute
+
+     OTHER ATTRIBUTES:
+     SIZE        = WIDTH OF TEXT BOX IN AVERAGE CHARACTER WIDTHS
+     MAXLENGTH   = MAX NUMBER OF CHARACTERS
+     READONLY    = DEFAULT VALUE IN TEXTBOX CANNOT BE CHANGED
+     DISABLED    = TEXTBOX IS GREYED OUT AND CANNOT BE SUBMITTED
+
+
+ -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>TEXT INPUT</title>
+  </head>
+  <body>
+    <form action="http://localhost/echo.pl" method="get">
+      <p>
+        <input type="submit" name="" value="Submit Form">
+      </p>
+      <dl>
+        <dt>User Name
+        <dd><input type="text" name="Name">
+        <dt>Password
+        <dd><input type="password" name="Password">
+        <dt>City
+        <dd><input type="text" name="City" value="Dallas">
+        <dt>Area
+        <dd><input type="text" name="Area" value="Downtown" disabled>
+
+        <dt>State
+        <dd><input type="text" name="State" value="Texas" readonly>
+        <dt>Zip Code
+        <dd><input type="text" name="Zip Code" size="5" maxlength="5">
+      </dl>
+    </form>
+
+  </body>
+</html>

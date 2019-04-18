@@ -1,0 +1,96 @@
+/* ABSOLUTE LAYOUTS ARE LIQUID LAYOUTS AND KEEPS THE ORDER WE WANT
+
+SET A SPECIFIC WIDTH TO ONE COLUMN STAYS FIXED,
+
+OVERLAPS OCCUR WHEN ZOOMING OUT WHICH CANNOT BE MITIGATED BY CLEAR PROPERTY */
+
+body {
+  font: 400 medium/1.6em Verdana, Helvetica, Arial, sans-serif;
+  color: #242424;
+  Background-color: #727e76;
+  margin: 0px; /* ENSURE THE BODY COVERS THE WHOLE PAGE */
+
+}
+
+#allcontent {
+  padding: 5px;
+  background-color: #045538;
+  margin-left: 20px;
+  margin-right: 20px;
+  display:
+}
+
+h1, h2, h3 {
+  font-size: 200%;
+}
+
+hgroup {
+  color: #080808;
+  background-image: linear-gradient(#3e7d1f, #c9701e);
+}
+
+
+header {
+  background-color: black;
+  color: #d0d0d0;
+  margin: 0px 10px 10px 10px;
+
+
+}
+
+.header h3 {
+  font-size: small;
+}
+
+
+#float {
+  background-color: #dbdbdb;
+  float: left;
+  padding: 30px;
+  margin: 0px 450px 10px 10px;
+}
+
+#leo {
+  background-color: #dbdbdb;
+  margin: 0px 10px 10px 10px;
+
+}
+
+#home {
+  background-color: #dbdbdb;
+  margin: 0px 10px 10px 10px;
+
+}
+
+#videos {
+  background-color: #dbdbdb;
+  margin: 0px 10px 10px 10px;
+  padding: 30px;
+  clear: left;
+}
+
+#sidebar {
+  background-color: #dbdbdb;
+  margin: 0px 10px 10px 10px;
+  padding: 30px;
+  position: absolute; /* ELEMENT IS REMOVED FROM FLOW - INLINE ELEMENTS WILL ALSO IGNORE THE FLOAT HERE */
+  top: 490px;/* THAT IS 200 PIXELS FROM THE TOP AND 350 PIXELS FROM THE RIGHT  */
+  right: 0px;/* ALL ELEMENTS CAN BE POSITIONED */
+  width: 400px;
+  z-index: auto;/* ABSOLUTELY POSITIONED OBJECTS CAN BE STACKED - THIS DETERMINS WHICH ONE IS ON TOP
+                  THIS ONLY WORKS ON ELEMENTS THAT ARE POSITIONED WITH ABSOLUTE, FLOAT OR FIXED POSITIONS */
+}
+
+
+
+#form {
+  background-color: #dbdbdb;
+  margin: 0px 10px 10px 10px;
+  padding: 30px;
+}
+
+footer {
+  background-color: #dbdbdb;
+  margin: 0px 10px 10px 10px;
+  padding: 15px;
+}

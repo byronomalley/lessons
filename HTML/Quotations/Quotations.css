@@ -1,0 +1,9 @@
+p {
+  border-style: solid;
+  border-color: red;
+}
+
+blockquote {
+  border-style: solid;
+  border-color: blue;
+}

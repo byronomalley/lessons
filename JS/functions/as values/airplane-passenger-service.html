@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Not Ryanair</title>
+    <script type="text/javascript">
+      var passengers = [ { name: "Jane Doloop", paid: true, ticket: "coach" },// each passenger is represented by an object with a name and paid property, an array of objects
+                         { name: "John Creevy", paid: true, ticket: "firstclass" },
+                         { name: "Brian Connolly", paid: false, ticket: "firstclass" },
+                         { name: "Jarlaith Dunne", paid: true, ticket: "coach" } ];
+
+      function processPassengers(passengers, testFunction) {// first paramenter is an array, the second is a fumction that tests for a condition in the array
+        for (var i = 0; i < passengers.length; i++) {// iterate through the passengers one at a time
+          if (testFunction(passengers[i])) {// a function is called within a function, in this case, if this inner function returns true, the containing function returns false
+            return false;
+          }
+        }
+        return true;// all passengers have passed the test
+      }
+
+
+      function checkNoFlyList(passenger) {
+       return (passenger.namev === "Dr. Evel");
+      }
+
+
+      function checkNotPaid(passenger) {
+       return (!passenger.paid);
+      }
+
+      var allCanFly = processPassengers(passengers, checkNoFlyList);
+      if (!allCanFly) {
+        console.log("The plane can't take off, somebody here is on the no-fly list.");
+      }
+
+      var allPaid = processPassengers(passengers, checkNotPaid);
+      if (!allPaid) {
+        console.log("some cheeky bollocks is jumping on the plane")
+      }
+      // !!! functions returning functions  !!!!!!
+      function createDrinkOrder(passenger) {// this function knows how to process each passenger drink order
+        var orderFunction; // create a variable to hold the function
+
+        if (passenger.ticket === "firstclass") {// conditional code to check the passengers ticket only once
+          orderFunction = function() {
+            alert("Would you like a cocktail or wine, gwwd saaar?");
+          };
+        } else {
+          orderFunction = function() {
+            alert("would you like a coke or water?");
+          };
+        }
+        return orderFunction;
+      }
+
+      function serveCustomer(passenger) {
+        var getDrinkOrderFunction = createDrinkOrder(passenger);// the variable getDrinkOrderFunctin now returns a function
+        getDrinkOrderFunction();// we use this function we get back from createDrinkOrder whenever we need to get a drink order for this passenger
+
+        createDrinkOrder(passenger);// these functions have the same arguement
+      }
+
+      function servePassengers(passengers) {
+        for (var i = 0; i < passengers.length; i++) {// now we iterate over the passengers in the array, and calling serveCustomer for each passenger
+          serveCustomer(passengers[i]);
+        }
+      }
+
+      servePassengers(passengers);
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

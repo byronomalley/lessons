@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Car Object</title>
+    <script type="text/javascript">
+      function makeCar() {
+        var makes = ["Chevy", "GM", "Fiat", "Tucker"];
+        var models = ["Cadillac", "500", "Bel-Air", "Torpedo"];
+        var years = ["1955", "1966", "1977", "1941"];
+        var colours = ["red", "blue", "turqoise", "purple"];
+        var convertible = [true, false];
+
+        var rand1 = Math.floor(Math.random() * makes.length);
+        var rand2 = Math.floor(Math.random() * models.length);
+        var rand3 = Math.floor(Math.random() * years.length);
+        var rand4 = Math.floor(Math.random() * colours.length);
+        var rand5 = Math.floor(Math.random() * 5) + 1;// ADD ONE TO MAKE SURE THERES AT LEAST ONE PASSENGER
+        var rand6 = Math.floor(Math.random() * 2);
+
+        var car = {
+          make: makes[rand1],
+          model: models[rand2],
+          year: years[rand3],
+          colour: colours[rand4],
+          passengers: rand5,
+          convertible: convertible[rand6],
+          milage: 0
+        };
+        return car;
+      }
+
+      function displayCar(car) {
+        console.log("Your new car is a " + car.year + " " + car.make + " " + car.model);
+      }
+
+      var carToSell = makeCar();
+      displayCar(carToSell);
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

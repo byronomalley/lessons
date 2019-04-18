@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>OPERSTORS</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>Operator</th><th>Operation</th><th>Accociation</th><th>Operands</th><th>Types</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>++</td><td>pre or post increment</td><td>R</td><td>1</td><td>lvalues - num</td>
+        </tr>
+        <tr>
+          <td>--</td><td>pre or post decrement</td><td>R</td><td>1</td><td>lvalues - num</td>
+        </tr>
+        <tr>
+          <td>-</td><td>negate number</td><td>R</td><td>1</td><td>num - num</td>
+        </tr>
+        <tr>
+          <td>+</td><td>convert to number</td><td>R</td><td>1</td><td>num - num</td>
+        </tr>
+        <tr>
+          <td>~</td><td>invert bits</td><td>R</td><td>1</td><td>int - int</td>
+        </tr>
+        <tr>
+          <td>!</td><td>invert boolean value</td><td>R</td><td>1</td><td>bool - bool</td>
+        </tr>
+        <tr>
+          <td>delete</td><td>remove a property</td><td>R</td><td>1</td><td>lvalues - bool</td>
+        </tr>
+        <tr>
+          <td>typeOf</td><td>determine type of operand</td><td>R</td><td>1</td><td>any - str</td>
+        </tr>
+        <tr>
+          <td>void</td><td>return undefined value</td><td>R</td><td>1</td><td>any - undefined</td>
+        </tr>
+        <tr>
+          <td>*,/,%</td><td>multiply, divide, remainder</td><td>L</td><td>2</td><td>num,num - num</td>
+        </tr>
+        <tr>
+          <td>+,-</td><td>add, subtract</td><td>L</td><td>2</td><td>num, num - num</td>
+        </tr>
+        <tr>
+          <td>+</td><td>concatenate strings</td><td>L</td><td>2</td><td>str, str - str</td>
+        </tr>
+        <tr>
+          <td><<</td><td>shift left</td><td>L</td><td>2</td><td>int, int - int</td>
+        </tr>
+        <tr>
+          <td>>></td><td>shift right with sign extension</td><td>L</td><td>2</td><td>int, int - int</td>
+        </tr>
+        <tr>
+          <td>>>></td><td>shift right with zero extension</td><td>L</td><td>2</td><td>int, int - int</td>
+        </tr>
+        <tr>
+          <td><,<=>,>=</td><td>Compare in numeric order</td><td>L</td><td>2</td><td>num, num - bool</td>
+        </tr>
+        <tr>
+          <td><,<=>,>=</td><td>compare in alphabetic order</td><td>L</td><td>2</td><td>str, str - bool</td>
+        </tr>
+        <tr>
+          <td>instanceOf</td><td></td><td>L</td><td>2</td><td>obj, func - bool</td>
+        </tr>
+        <tr>
+          <td>in</td><td></td><td>L</td><td>2</td><td>str, str - bool</td>
+        </tr>
+        <tr>
+          <td>==</td><td>equality test</td><td>L</td><td>2</td><td>any, any - bool</td>
+        </tr>
+        <tr>
+          <td>!=</td><td>inequality test</td><td>L</td><td>2</td><td>any, any - bool</td>
+        </tr>
+        <tr>
+          <td>===</td><td>strict equality test</td><td>L</td><td>2</td><td>any, any - bool</td>
+        </tr>
+        <tr>
+          <td>!==</td><td>strict inequality test</td><td>L</td><td>2</td><td>any, any - bool</td>
+        </tr>
+        <tr>
+          <td>&</td><td>compute bitwise and</td><td>L</td><td>2</td><td>int, int - int</td>
+        </tr>
+        <tr>
+          <td>^</td><td>compute bitwise xor</td><td>L</td><td>2</td><td>int, int - int</td>
+        </tr>
+        <tr>
+          <td>|</td><td>compute bitwise or</td><td>L</td><td>2</td><td>int, int - int</td>
+        </tr>
+        <tr>
+          <td>&&</td><td>compute logical and</td><td>L</td><td>2</td><td>any, any - any</td>
+        </tr>
+        <tr>
+          <td>||</td><td>compute logical or</td><td>L</td><td>2</td><td>any, any - any</td>
+        </tr>
+        <tr>
+          <td>?:</td><td>choose 2nd or 3rd operand</td><td>R</td><td>3</td><td>bool, any, any - any</td>
+        </tr>
+        <tr>
+          <td>=</td><td>assign to a variable or property</td><td>R</td><td>2</td><td>ival, any - any</td>
+        </tr>
+        <tr>
+          <td>*=, /-, %=, +=, -=, &=, ^=, |=, <<=, >>=, >>>=</td><td>operate and assign</td><td>R</td><td>2</td><td>lvalues, any - any</td>
+        </tr>
+        <tr>
+          <td>,</td><td>operate and assign</td><td>R</td><td>2</td><td>any,any - any</td>
+        </tr>
+
+      </tbody>
+    </table>
+    <script type="text/javascript">
+      const name = 'Byz';
+      const age = 30;
+
+      console.log(`oi my name is ${name} and im a gay ${age} year old`)
+
+    </script>
+  </body>
+</html>
