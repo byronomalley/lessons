@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+
+      // SPREAD OPERATOR: ADD ARRAY TO NEW ARRAY
+      var arr1 = ["three", "dots", "close", "number"];
+      var arr2 = ["second", "food", ...arr1, "sea creatures"];
+      console.log(arr2);
+
+      //PASS AN ARRAY ELEMENT INTO A FUNCTION
+      function takeThreeYokes(x, y, z) {
+        console.log(`We have ${x} and ${y} and ${z}`);
+      }
+      var args = ["Brownies","Ghosties","Cherries","Snails"];// the function only calls for 3 items, so snails is ommited
+      takeThreeYokes(...args);
+
+      // COPY ARRAYS
+      arr3 = [1,2,3];
+      arr4 = [...arr3];// arr 4 is still diferent from arr3
+      arr4.push(4);
+      console.log(arr3);
+      console.log(arr4);
+
+      // CONCATENATE ARRAYS
+      arr5 = [1,2,3];
+      arr6 = [4,5,6];
+      arr5 = [...arr5, "..forgot how to count???", ...arr6];
+      console.log(arr5);
+
+      // REST OPERATOR: CONDENSE ELEMENTS INTO AN ARRAY
+      function bestFunctionEver(multiplier, ...theArgs) {// this is just the spread operator passed into a funciton
+        return theArgs.map(function(element) {// map method (specific to arrays) is used to map elements
+          return multiplier * element
+        })
+      }
+      var arr7 = bestFunctionEver(2,1,2,3,4,5,6,7,8);// the first 'element' is the multiplier, the rest of them are the 'element' arguements to be multiplied
+      console.log(arr7);
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
