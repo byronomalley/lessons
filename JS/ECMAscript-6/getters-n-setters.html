@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <script type="text/javascript">
+    // GETTER = access properties
+    // functions are meant to simply return (get) the value of an object's
+    // private variable to the user without the user directly accessing the private
+    // variable.
+    //
+    // SETTER = change properties
+    // functions are meant to modify (set) the value of an object's private
+    // variable based on the value passed into the setter function. This change could
+    // involve calculations, or even overwriting the previous value completely.
+
+    // VERSION ONE
+    const person1 = {
+      firstName: 'Dave',
+      lastName: 'Willy'
+    };
+
+    console.log(person1.firstName + ' ' + person1.lastName); // CONCATENATION
+    console.log(`${person1.firstName} ${person1.lastName}`); // TEMPLATE LITERAL
+
+    // VERSION TWO
+    const person2 = {
+      firstName: 'Dave',
+      lastName: 'Chubbs',
+      fullName() {// instead of "fullName: function()"
+        return `${person2.firstName} ${person2.lastName}` ;
+      }
+    };
+    // person2.fullName = 'Hillary Duff'; // this wont work because we cant change it from the outside
+    console.log(person2.fullName());// this is read only
+
+    // VERSION THREE
+    const person3 = {
+      firstName: 'Dave',
+      lastName: 'Willy',
+      get fullName() {// now this method is a GETTER - now fullname can be accessed like a property
+        return `${person3.firstName} ${person3.lastName}`
+      },
+      set fullName(value) {// SETTER - Needs parameter
+        const parts = value.split(' ');
+        this.firstName = parts[0];
+        this.lastName = parts[1];
+      }
+    };
+
+    person3.fullName = 'Hillary Duff';
+    console.log(person3.fullName);
+  </script>
+</html>

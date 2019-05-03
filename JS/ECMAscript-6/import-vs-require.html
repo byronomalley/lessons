@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <script>
+    /* In the past, the function require() would be used to import the functions
+    and code in external files and modules. While handy, this presents a problem:
+    some files and modules are rather large, and you may only need certain code
+    from those external resources.
+
+    ES6 gives us a very handy tool known as import. With it, we can choose which
+    parts of a module or file to load into a given file, saving time and memory. */
+
+    import { capitalizeString } from
+    "string_functions"
+
+    "use strict";
+    capitalizeString("hello!");
+
+    // EXPORT
+    /* When we want some code - a function, or a variable - to be usable in
+    another file, we must export it in order to import it into another file.
+    Like import, export is a non-browser feature. */
+    // EXAMPLE 1 - EXPORTING FUNCTIONS AND VARIABLES SEPERATELY
+    const capitalizeString = (string) => {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+    export { capitalizeString } //How to export functions.
+    export const foo = "bar"; //How to export variables.
+
+    // EXAMPLE 2 - COMBINED EXPORT
+    const capitalizeString = (string) => {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+    const foo = "bar";
+    export { capitalizeString, foo }
+
+    
+
+  </script>
+</html>

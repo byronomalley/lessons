@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<!--
+ABSOLUTE LENGTHS
+pixels - px
+inches - in
+centemeters - cm
+milimeters - mm
+points - pt: 1/72 of 1 inch
+picas - pc: 1/6 of 1 inch
+
+RELATIVE LENGHTS
+- units based on something else: parent elements, currently declared font attributes, viewport dimensions
+-
+percent - %
+font-sizes - em & rem
+  - font-family doesnt change the layout
+  - based on the font-size property: set font-sixe of 10px to parent, and 2em to child, the child has 20px font-size
+  - rules cascade from parent to child: 10px; + 2em + 2em = 40px;
+
+  - REM (root-em) does not cascade
+  - the value of this property aways referres to the font-size value of the root container
+  - useful for responsive design, when you want to make changes to the entire layout by vhanging on value- the root value
+
+
+character sizes - ex & ch
+  - font-family is critical
+  - ex is based on the size of "x"
+  - ch is based on the width of "0"
+
+viewport sizes - vw & vh
+  - these divide the viewport into 100 units
+  - responsive
+  - vw can be applied to the hieght property and the vh to the width, which is intereting
+
+viewport max & viewport min - vmax & vmin
+  - these divide the viewport into 100 units
+  - they reference the height or the width depending on which is the biggest or smallest dimension
+ -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      .example {
+        background-color: #a1a293;
+        font-size: 10px;
+      }
+      .parent {
+        background-color: #b7e96a;
+        font-size: 2em;
+      }
+      .child {
+        background-color: #fc9a49;
+        font-size: 2em;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="example">2em
+      <div class="parent">2em
+        <div class="child">2em</div>
+      </div>
+
+    </div>
+  </body>
+</html>
