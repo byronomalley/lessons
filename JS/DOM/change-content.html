@@ -1,0 +1,33 @@
+<!--
+FINDING ELEMENTS
+document.getElementById(id)
+document.getElementsByTagName(name)
+document.getElementsByClassName(name)
+
+CHANGING ELEMENTS
+element.innerHTML =  new html content
+element.attribute = new value
+element.style.property = new style
+element.setAttribute(attribute, value) = Method
+
+ADDING AND DELETING getElementsByTagNamedocument.createElement(element) 	Create an HTML element
+document.removeChild(element) 	Remove an HTML element
+document.appendChild(element) 	Add an HTML element
+document.replaceChild(new, old) 	Replace an HTML element
+document.write(text)   	Write into the HTML output stream
+
+ADDING EVENT HANDLERS
+document.getElementById(id).onclick = function(){code}
+ -->
+<!DOCTYPE html>
+<html>
+<body>
+<h2>My First Page</h2>
+<p id="demo"></p><!-- this will say Hello! -->
+
+<script>
+document.getElementById("demo").innerHTML = "Hello!";
+</script>
+
+</body>
+</html>

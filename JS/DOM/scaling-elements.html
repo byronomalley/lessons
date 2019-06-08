@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <style>
+      html, body {
+        margin: 0px;
+      }
+
+      #services {
+        align-content: center;
+        justify-content: center;
+        grid-column-gap: 20px;
+        padding: 50px;
+        background-color: red;
+      }
+
+      .sect {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        height: 400px;
+        width: auto;
+        background-color: #000;
+      }
+
+      .text-col {/* BLURRED IMAGE AND CLEAR TEXT */
+        display: grid;
+        place-items: center;
+        position: relative;
+        background: url(pawel-czerwinski.jpg);
+        background-size: cover;
+        z-index: 0;
+      }
+
+      .text-col-active {/* BLURRED IMAGE AND CLEAR TEXT */
+        display: grid;
+        place-items: center;
+        position: relative;
+        background: url(pawel-czerwinski.jpg);
+        background-size: cover;
+        z-index: 0;
+      }
+
+      .text-col-active:before {
+        -webkit-transition: filter .3s ease-in-out;
+        -moz-transition: filter .3s ease-in-out;
+        -ms-transition: filter .3s ease-in-out;
+        -o-transition: filter .3s ease-in-out;
+        transition: filter .3s ease-in-out;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: url(pawel-czerwinski.jpg);
+        background-size: cover;
+        filter: blur(0px) brightness(100%);
+      }
+
+      .text {
+        -webkit-transition: opacity .3s ease-in-out;
+        -moz-transition: opacity .3s ease-in-out;
+        -ms-transition: opacity .3s ease-in-out;
+        -o-transition: opacity .3s ease-in-out;
+        transition: opacity .3s ease-in-out;
+        text-align: center;
+        position: relative;
+        font: bold 20px sans-serif;
+        color: #fff;
+        opacity: 0;
+      }
+
+      .icon-col {
+        display: grid;
+        place-items: center;
+        background-color: grey;
+      }
+
+
+    </style>
+  </head>
+  <body>
+
+    <nav id="nav">
+    </nav>
+
+    <div id="services">
+
+      <div class="sect" id="sect1">
+        <div class="icon-col" id="icon-col1">
+          <img class="icon" id="icon1" src="key.png" width="70px">
+        </div><!-- icon -->
+
+        <div class="text-col text-col-active" id="text-col1">
+          <div class="text" id="text1">
+            <p>alhfooai; ai;lhoaji aoi;nuia;ogj aoi;nuia;ogj <br/>
+              aoi;nuia;ogj aoi;nuia;ogj aoi;nuia;ogj aoi;nuia;ogj</p>
+            </div>
+          </div><!-- text -->
+      </div><!-- INNER SECTION: END -->
+
+      <div class="sect" id="sect2">
+        <div class="text-col text-col-active" id="text-col2">
+          <div class="text" id="text2">
+            <p>alhfooai; ai;lhoaji aoi;nuia;ogj aoi;nuia;ogj <br/>
+              aoi;nuia;ogj aoi;nuia;ogj aoi;nuia;ogj aoi;nuia;ogj</p>
+            </div>
+          </div><!-- text -->
+
+          <div class="icon-col" id="icon-col2">
+            <img class="icon" id="icon2" src="key.png" width="70px">
+          </div><!-- icon -->
+      </div><!-- INNER SECTION: END -->
+
+      <div class="sect" id="sect3">
+        <div class="icon-col" id="icon-col3">
+          <img class="icon" id="icon3" src="key.png" width="70px">
+        </div><!-- icon -->
+
+        <div class="text-col text-col-active" id="text-col3">
+          <div class="text" id="text3">
+            <p>alhfooai; ai;lhoaji aoi;nuia;ogj aoi;nuia;ogj <br/>
+              aoi;nuia;ogj aoi;nuia;ogj aoi;nuia;ogj aoi;nuia;ogj</p>
+            </div>
+          </div><!-- text -->
+      </div><!-- INNER SECTION: END -->
+
+      <div class="sect" id="sect4">
+        <div class="text-col text-col-active" id="text-col4">
+          <div class="text" id="text4">
+            <p>alhfooai; ai;lhoaji aoi;nuia;ogj aoi;nuia;ogj <br/>
+              aoi;nuia;ogj aoi;nuia;ogj aoi;nuia;ogj aoi;nuia;ogj</p>
+            </div>
+          </div><!-- text -->
+
+          <div class="icon-col" id="icon-col4">
+            <img class="icon" id="icon4" src="key.png" width="70px">
+          </div><!-- icon -->
+      </div><!-- INNER SECTION: END -->
+
+      <div class="sect" id="sect5">
+        <div class="icon-col" id="icon-col5">
+          <img class="icon" id="icon5" src="key.png" width="70px">
+        </div><!-- icon -->
+
+        <div class="text-col text-col-active" id="text-col5">
+          <div class="text" id="text5">
+            <p>alhfooai; ai;lhoaji aoi;nuia;ogj aoi;nuia;ogj <br/>
+              aoi;nuia;ogj aoi;nuia;ogj aoi;nuia;ogj aoi;nuia;ogj</p>
+            </div>
+          </div><!-- text -->
+      </div><!-- INNER SECTION: END -->
+
+    </div><!-- container -->
+
+  <script type="text/javascript">
+    function Section(sect, icon, textColumn, text) {
+      this.sect = sect;
+      this.icon = icon;
+      this.textColumn = textColumn;
+      this.text = text;
+    }
+
+    var sect1 = new Section(document.getElementById('sect1'), document.getElementById('icon1'), document.getElementById('text-col1'), document.getElementById('text1'));
+    var sect2 = new Section(document.getElementById('sect2'), document.getElementById('icon2'), document.getElementById('text-col2'), document.getElementById('text2'));
+    var sect3 = new Section(document.getElementById('sect3'), document.getElementById('icon3'), document.getElementById('text-col3'), document.getElementById('text3'));
+    var sect4 = new Section(document.getElementById('sect4'), document.getElementById('icon4'), document.getElementById('text-col4'), document.getElementById('text4'));
+    var sect5 = new Section(document.getElementById('sect5'), document.getElementById('icon5'), document.getElementById('text-col5'), document.getElementById('text5'));
+    var sections = [sect1, sect2, sect3, sect4, sect5];
+
+
+
+    mouseOver = function(icon, textColumn, text) {
+      icon.addEventListener("mouseover", () => {
+        icon.setAttribute("src", "key2.png");
+        text.style.opacity = "1";
+        [].every.call( document.styleSheets, function ( sheet ) {
+          return [].every.call( sheet.cssRules, function ( rule ) {
+            if ( rule.selectorText === '.text-col-active::before' ) {
+              rule.style.filter = "blur(5px) brightness(50%)";
+              return false;
+            }
+            return true;
+          });
+        });
+        // textColumn.classList.add("text-col-active");
+        // textColumn.classList.remove("text-col");
+      });
+      icon.addEventListener("mouseout", () => {
+        icon.setAttribute("src", "key.png");
+        text.style.opacity = "0";
+        [].every.call( document.styleSheets, function ( sheet ) {
+          return [].every.call( sheet.cssRules, function ( rule ) {
+            if ( rule.selectorText === '.text-col-active::before' ) {
+              rule.style.filter = "blur(0px) brightness(100%)";
+              return false;
+            }
+            return true;
+          });
+        });
+        // textColumn.classList.remove("text-col-active");
+        // textColumn.classList.add("text-col");
+      });
+    }
+
+    // query = function(sect) {
+    //   var john = sect.querySelector('text-col-active');
+    // }
+
+    for (let i = 0; i < sections.length; i++) {
+      mouseOver(sections[i].icon, sections[i].textColumn, sections[i].text, sections[i].active);
+    }
+
+    // [].every.call( document.styleSheets, function ( sheet ) {
+    //   return [].every.call( sheet.cssRules, function ( rule ) {
+    //       if ( rule.selectorText === '.text-col-active::before' ) {
+    //           rule.style.filter = "blur(5px) brightness(50%)";
+    //           return false;
+    //         }
+    //         return true;
+    //       });
+    //     });
+
+  </script>
+  </body>
+</html>

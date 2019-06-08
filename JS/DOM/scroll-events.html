@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <style>
+      html, body {
+        margin: 0px;
+      }
+
+      #nav {
+        transition: 0.5s;
+        background-color: blue;
+        height: 20px;
+        position: sticky;
+        top: 0px;
+      }
+
+      #container {
+        padding: 50px;
+        background-color: red;
+      }
+
+      .sect {
+        margin: 50px;
+        height: 400px;
+        width: auto;
+        background-color: yellow;
+      }
+
+      #sect2{
+        margin-top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <nav id="nav">
+    </nav>
+
+    <div id="container">
+      <div class="sect" id="sect1"></div>
+      <div class="sect" id="sect2"></div>
+      <div class="sect" id="sect3"></div>
+    </div>
+
+  <script type="text/javascript">
+
+    var nav = document.getElementById('nav');
+    var sect1 = document.getElementById('sect1')
+    var sect2 = document.getElementById('sect2')
+
+    window.addEventListener('scroll', () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;// this is the value of the total scrollable height of the page
+      const sect1bottom = sect1.scrollHeight + 100;
+      const sect2Top =
+      const scrolled = window.scrollY;// this is the value of the current scroll point
+      if (scrolled > sect1bottom) {
+        nav.style.backgroundColor = 'black';
+      } else {
+        nav.style.backgroundColor = 'white';
+      }
+    });
+  </script>
+  </body>
+</html>
+
+var nav = document.getElementById('nav');
+var vid = document.getElementById('vid');
+var services = document.getElementById('services');
+var iaa = document.getElementById('iaa');
+var slides = document.getElementById('slides');
+
+window.addEventListener('scroll', () => {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;// this is the value of the total scrollable height of the page
+  const vidBottom = vid.scrollHeight;
+  const slidesTop = vid.scrollHeight + iaa.scrollHeight + sevices.scrollHeight;
+  const slidesBottom = vid.scrollHeight + iaa.scrollHeight + services.scrollHeight + slides.scrollHeight;
+  const scrolled = window.scrollY;// this is the value of the current scroll point
+  if (scrolled < vidBottom || scrolled > slidesTop && scrolled < slidesBottom) {
+    nav.style.backgroundColor = 'transparent';
+  } else {
+    nav.style.backgroundColor = '#fff';
+  }
+});

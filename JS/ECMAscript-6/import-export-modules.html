@@ -1,0 +1,18 @@
+
+/*
+<!--
+Import and export allow is to modulate our code across different files
+
+the imported vlue is wrapped in ""
+the export value is wrapped in {}
+  -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <script type="module">
+
+    import {myFunc, myFunc2} from "./export.js";
+    console.log(myFunc(6));
+    console.log(myFunc2(4));
+
+  </script>
+</html>
