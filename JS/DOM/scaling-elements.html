@@ -33,7 +33,7 @@
         z-index: 0;
       }
 
-      .text-col-active {/* BLURRED IMAGE AND CLEAR TEXT */
+      .text-col-active {
         display: grid;
         place-items: center;
         position: relative;
@@ -43,11 +43,11 @@
       }
 
       .text-col-active:before {
-        -webkit-transition: filter .3s ease-in-out;
-        -moz-transition: filter .3s ease-in-out;
-        -ms-transition: filter .3s ease-in-out;
-        -o-transition: filter .3s ease-in-out;
-        transition: filter .3s ease-in-out;
+        -webkit-transition: filter .5s ease-in-out;
+        -moz-transition: filter .5s ease-in-out;
+        -ms-transition: filter .5s ease-in-out;
+        -o-transition: filter .5s ease-in-out;
+        transition: filter .5s ease-in-out;
         content: "";
         top: 0;
         left: 0;
@@ -93,7 +93,7 @@
           <img class="icon" id="icon1" src="key.png" width="70px">
         </div><!-- icon -->
 
-        <div class="text-col text-col-active" id="text-col1">
+        <div class="text-col" id="text-col1">
           <div class="text" id="text1">
             <p>alhfooai; ai;lhoaji aoi;nuia;ogj aoi;nuia;ogj <br/>
               aoi;nuia;ogj aoi;nuia;ogj aoi;nuia;ogj aoi;nuia;ogj</p>
@@ -102,7 +102,7 @@
       </div><!-- INNER SECTION: END -->
 
       <div class="sect" id="sect2">
-        <div class="text-col text-col-active" id="text-col2">
+        <div class="text-col" id="text-col2">
           <div class="text" id="text2">
             <p>alhfooai; ai;lhoaji aoi;nuia;ogj aoi;nuia;ogj <br/>
               aoi;nuia;ogj aoi;nuia;ogj aoi;nuia;ogj aoi;nuia;ogj</p>
@@ -119,7 +119,7 @@
           <img class="icon" id="icon3" src="key.png" width="70px">
         </div><!-- icon -->
 
-        <div class="text-col text-col-active" id="text-col3">
+        <div class="text-col" id="text-col3">
           <div class="text" id="text3">
             <p>alhfooai; ai;lhoaji aoi;nuia;ogj aoi;nuia;ogj <br/>
               aoi;nuia;ogj aoi;nuia;ogj aoi;nuia;ogj aoi;nuia;ogj</p>
@@ -128,7 +128,7 @@
       </div><!-- INNER SECTION: END -->
 
       <div class="sect" id="sect4">
-        <div class="text-col text-col-active" id="text-col4">
+        <div class="text-col" id="text-col4">
           <div class="text" id="text4">
             <p>alhfooai; ai;lhoaji aoi;nuia;ogj aoi;nuia;ogj <br/>
               aoi;nuia;ogj aoi;nuia;ogj aoi;nuia;ogj aoi;nuia;ogj</p>
@@ -145,7 +145,7 @@
           <img class="icon" id="icon5" src="key.png" width="70px">
         </div><!-- icon -->
 
-        <div class="text-col text-col-active" id="text-col5">
+        <div class="text-col" id="text-col5">
           <div class="text" id="text5">
             <p>alhfooai; ai;lhoaji aoi;nuia;ogj aoi;nuia;ogj <br/>
               aoi;nuia;ogj aoi;nuia;ogj aoi;nuia;ogj aoi;nuia;ogj</p>
@@ -156,11 +156,12 @@
     </div><!-- container -->
 
   <script type="text/javascript">
-    function Section(sect, icon, textColumn, text) {
+    function Section(sect, icon, textColumn, text, active) {
       this.sect = sect;
       this.icon = icon;
       this.textColumn = textColumn;
       this.text = text;
+      this.active = false;
     }
 
     var sect1 = new Section(document.getElementById('sect1'), document.getElementById('icon1'), document.getElementById('text-col1'), document.getElementById('text1'));
@@ -172,10 +173,24 @@
 
 
 
-    mouseOver = function(icon, textColumn, text) {
+    mouseOver = function(icon, textColumn, text, active) {
       icon.addEventListener("mouseover", () => {
         icon.setAttribute("src", "key2.png");
         text.style.opacity = "1";
+        textColumn.classList.add("text-col-active");
+        active = true;
+
+      });
+      icon.addEventListener("mouseout", () => {
+        icon.setAttribute("src", "key.png");
+        text.style.opacity = "0";
+        textColumn.classList.remove("text-col-active");
+        active = false;
+      });
+    }
+
+    blurInOut = function(active) {
+      if (active === true) {
         [].every.call( document.styleSheets, function ( sheet ) {
           return [].every.call( sheet.cssRules, function ( rule ) {
             if ( rule.selectorText === '.text-col-active::before' ) {
@@ -185,12 +200,7 @@
             return true;
           });
         });
-        // textColumn.classList.add("text-col-active");
-        // textColumn.classList.remove("text-col");
-      });
-      icon.addEventListener("mouseout", () => {
-        icon.setAttribute("src", "key.png");
-        text.style.opacity = "0";
+      } else if (active === false) {
         [].every.call( document.styleSheets, function ( sheet ) {
           return [].every.call( sheet.cssRules, function ( rule ) {
             if ( rule.selectorText === '.text-col-active::before' ) {
@@ -200,17 +210,12 @@
             return true;
           });
         });
-        // textColumn.classList.remove("text-col-active");
-        // textColumn.classList.add("text-col");
-      });
+      }
     }
-
-    // query = function(sect) {
-    //   var john = sect.querySelector('text-col-active');
-    // }
 
     for (let i = 0; i < sections.length; i++) {
       mouseOver(sections[i].icon, sections[i].textColumn, sections[i].text, sections[i].active);
+      blurInOut(sections[i].active);
     }
 
     // [].every.call( document.styleSheets, function ( sheet ) {
